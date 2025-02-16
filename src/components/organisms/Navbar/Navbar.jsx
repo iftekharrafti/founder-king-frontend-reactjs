@@ -11,8 +11,28 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeNav, setActiveNav] = useState('Home');
 
-    const navItems = ['Home', 'Feature', 'Theme', 'Pricing', 'FAQ'];
-
+    const navItems = [
+        {
+            name: 'Home',
+            link: '/'
+        },
+        {
+            name: 'Feature',
+            link: '/feature'
+        },
+        {
+            name: 'Theme',
+            link: '/theme'
+        },
+        {
+            name: 'Pricing',
+            link: '/pricing'
+        },
+        {
+            name: 'Faq',
+            link: '/faq'
+        }
+    ];
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
@@ -32,7 +52,7 @@ const Navbar = () => {
                     <div className="hidden md:block">
                         <div className="ml-10 flex items-center space-x-8">
                             {navItems.map((item) => (
-                                <button
+                                <Link to={item.link}
                                     key={item}
                                     onClick={() => setActiveNav(item)}
                                     className={`${activeNav === item
@@ -40,8 +60,8 @@ const Navbar = () => {
                                         : 'text-gray-600 hover:text-primary'
                                         } px-3 py-2 text-sm font-medium transition-colors duration-200`}
                                 >
-                                    {item}
-                                </button>
+                                    {item.name}
+                                </Link>
                             ))}
                         </div>
                     </div>
