@@ -5,6 +5,7 @@ import RegisterPage from "../components/pages/RegisterPage/RegisterPage";
 import ThemePage from "../components/pages/ThemePage/ThemePage";
 import ServicePage from "../components/pages/ServicePage/ServicePage";
 import PricingPage from "../components/pages/PricingPage/PricingPage";
+import FaqPage from "../components/pages/FaqPage/FaqPage";
 
 
 const router = createBrowserRouter([
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
             {
                 path: '/pricing',
                 element: <PricingPage />,
+            },
+            {
+                path: '/faq',
+                element: <FaqPage />,
             },
         ],
     }
