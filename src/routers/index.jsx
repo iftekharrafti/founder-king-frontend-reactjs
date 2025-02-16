@@ -3,6 +3,8 @@ import HomePage from "../components/pages/HomePage/HomePage";
 import LoginPage from "../components/pages/LoginPage/LoginPage";
 import RegisterPage from "../components/pages/RegisterPage/RegisterPage";
 import ThemePage from "../components/pages/ThemePage/ThemePage";
+import ServicePage from "../components/pages/ServicePage/ServicePage";
+import PricingPage from "../components/pages/PricingPage/PricingPage";
 
 
 const router = createBrowserRouter([
@@ -25,6 +27,14 @@ const router = createBrowserRouter([
             {
                 path: '/theme',
                 element: <ThemePage />,
+            },
+            {
+                path: '/feature',
+                element: <ServicePage />,
+            },
+            {
+                path: '/pricing',
+                element: <PricingPage />,
             },
         ],
     }
