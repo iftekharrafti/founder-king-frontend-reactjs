@@ -4,8 +4,8 @@ const Section = ({ children, heading, subHeading, className }) => {
   return (
     <section className={`md:py-6 pt-4 ${className}`}>
       <div className="container mx-auto px-4">
-        <div className="text-center mb-10">
-          <Heading className="mb-6 text-gray-800" type="main">
+        <div className="text-center md:mb-10 mb-4">
+          <Heading className="md:mb-6 mb-2 text-gray-800" type="main">
             {heading}
           </Heading>
 

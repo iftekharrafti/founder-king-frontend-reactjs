@@ -46,7 +46,7 @@ const TestimonialsSection = () => {
     ];
 
     return (
-        <section className="md:py-14 py-8 px-4">
+        <section className="md:py-14 py-0 px-4">
             <div className="max-w-7xl mx-auto">
                 <div className="relative">
                     <SwiperSlider lg={3} md={2} sm={1}>

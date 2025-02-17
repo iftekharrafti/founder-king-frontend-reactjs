@@ -46,7 +46,7 @@ const SwiperSlider = ({ children, lg, md, sm, icon = true, autoplay = false }) =
         ref={swiperRef}
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={30}
-        slidesPerView={2}
+        slidesPerView={1}
         navigation={{
           prevEl: navigationPrevRef.current,
           nextEl: navigationNextRef.current,

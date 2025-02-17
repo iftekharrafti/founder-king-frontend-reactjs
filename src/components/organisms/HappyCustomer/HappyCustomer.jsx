@@ -34,7 +34,7 @@ const HappyCustomer = () => {
 
     return (
         <div>
-            <SwiperSlider lg={5} md={3} sm={2} icon={false} autoplay={true}>
+            <SwiperSlider lg={5} md={3} sm={1} icon={false} autoplay={true}>
                 {logos.map((logo, index) => (
                     <SwiperSlide key={index}>
                         <div className="max-h-28 flex items-center justify-center p-4 bg-gray-100 rounded-lg shadow-sm
