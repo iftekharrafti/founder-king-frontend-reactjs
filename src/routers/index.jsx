@@ -6,9 +6,11 @@ import ThemePage from "../components/pages/ThemePage/ThemePage";
 import ServicePage from "../components/pages/ServicePage/ServicePage";
 import PricingPage from "../components/pages/PricingPage/PricingPage";
 import FaqPage from "../components/pages/FaqPage/FaqPage";
-import AboutUs from "../components/organisms/AboutUs/AboutUs";
-import ContactUs from "../components/organisms/ContactUs/ContactUs";
-import PrivacyPolicy from "../components/organisms/PrivacyPolicy/PrivacyPolicy";
+
+import Checkout from "../components/pages/Checkout/Checkout";
+import AboutUs from "../components/pages/AboutUs/AboutUs";
+import ContactUs from "../components/pages/ContactUs/ContactUs";
+import PrivacyPolicy from "../components/pages/PrivacyPolicy/PrivacyPolicy";
 
 
 const router = createBrowserRouter([
@@ -55,6 +57,10 @@ const router = createBrowserRouter([
             {
                 path: '/privacy-policy',
                 element: <PrivacyPolicy />,
+            },
+            {
+                path: '/checkout',
+                element: <Checkout />,
             },
         ],
     }

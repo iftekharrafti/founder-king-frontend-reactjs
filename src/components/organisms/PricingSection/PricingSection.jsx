@@ -4,6 +4,7 @@ import PriceTag from "@/components/atoms/PriceTag/PriceTag";
 import Card from "@/components/molecules/Card/Card";
 import GridTemplate from "@/components/UI/GridTemplate/GridTemplate";
 import React from "react";
+import PrimaryButton from "../../atoms/Buttons/PrimaryButton";
 
 const PricingSection = ({ pricingData }) => {
   return (
@@ -37,14 +38,7 @@ const PricingSection = ({ pricingData }) => {
                   ))}
                 </div>
                 {/* Button */}
-                <button
-                  className="w-full py-3 px-6 bg-gradient-to-r from-primary to-primary_hover
-        text-white rounded-lg font-semibold transition-all duration-300 
-        hover:from-primary hover:to-pink-700 hover:shadow-lg
-        focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-opacity-50"
-                >
-                  {plan?.buttonText}
-                </button>
+                <PrimaryButton link={plan?.link}>{plan?.buttonText}</PrimaryButton>
               </div>
             </Card>
           ))}

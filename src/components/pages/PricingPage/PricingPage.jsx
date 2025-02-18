@@ -24,6 +24,7 @@ const PricingPage = () => {
                 { text: "Chat option (messenger. whatsapp live chat)", included: false },
             ],
             buttonText: "Purchase Now",
+            link: "/checkout",
         },
         {
             title: "Extended License",
@@ -43,6 +44,7 @@ const PricingPage = () => {
                 { text: "Chat option (messenger. whatsapp live chat)", included: false },
             ],
             buttonText: "Purchase Now",
+            link: "/checkout"
         },
         {
             title: "Bundle Pack",
@@ -64,6 +66,7 @@ const PricingPage = () => {
                 { text: "Chat option (messenger. whatsapp live chat)", included: true },
             ],
             buttonText: "Purchase Now",
+            link: "/checkout"
         },
     ];
     return (
