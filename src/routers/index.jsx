@@ -8,6 +8,7 @@ import PricingPage from "../components/pages/PricingPage/PricingPage";
 import FaqPage from "../components/pages/FaqPage/FaqPage";
 import AboutUs from "../components/organisms/AboutUs/AboutUs";
 import ContactUs from "../components/organisms/ContactUs/ContactUs";
+import PrivacyPolicy from "../components/organisms/PrivacyPolicy/PrivacyPolicy";
 
 
 const router = createBrowserRouter([
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
             {
                 path: '/contact-us',
                 element: <ContactUs />,
+            },
+            {
+                path: '/privacy-policy',
+                element: <PrivacyPolicy />,
             },
         ],
     }
