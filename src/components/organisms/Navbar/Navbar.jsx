@@ -1,15 +1,12 @@
-"use client"
-import { RxCross2 } from "react-icons/rx";
 import { AiOutlineMenu } from "react-icons/ai";
+import { RxCross2 } from "react-icons/rx";
 import React, { useState } from 'react';
-import PrimaryButton from "@/components/atoms/Buttons/PrimaryButton";
-import Image from "@/components/atoms/Images/Image";
-import SecondaryButton from "@/components/atoms/Buttons/SecondaryButton";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
+    const location = useLocation();
     const [isOpen, setIsOpen] = useState(false);
-    const [activeNav, setActiveNav] = useState('Home');
+
 
     const navItems = [
         {
@@ -33,7 +30,14 @@ const Navbar = () => {
             link: '/faq'
         }
     ];
-    console.log("activeNav, ", activeNav);
+
+    const [activeNav, setActiveNav] = useState(() => {
+        // Initialize based on current path
+        const path = location.pathname;
+        if (path === '/') return 'Home';
+        return navItems.find(item => item.link === path)?.name || 'Home';
+    });
+
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
@@ -45,7 +49,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <div className="flex-shrink-0 flex items-center">
                         <Link to="/">
-                            <Image src="/images/logo.png" alt="Logo" className="w-[190px] h-auto" />
+                            <img src="/images/logo.png" alt="Logo" className="w-48 h-auto" />
                         </Link>
                     </div>
 
@@ -53,13 +57,14 @@ const Navbar = () => {
                     <div className="hidden md:block">
                         <div className="ml-10 flex items-center space-x-8">
                             {navItems.map((item) => (
-                                <Link to={item.link}
+                                <Link
+                                    to={item.link}
                                     key={item.name}
                                     onClick={() => setActiveNav(item.name)}
-                                    className={`${activeNav === item.name
+                                    className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${activeNav === item.name
                                         ? 'text-primary font-semibold'
                                         : 'text-gray-600 hover:text-primary'
-                                        } px-3 py-2 text-sm font-medium transition-colors duration-200`}
+                                        }`}
                                 >
                                     {item.name}
                                 </Link>
@@ -69,17 +74,25 @@ const Navbar = () => {
 
                     {/* Auth Buttons */}
                     <div className="hidden md:flex items-center space-x-4">
-                        <SecondaryButton link="/login">Login</SecondaryButton>
-                        <PrimaryButton link="/register">
+                        <Link
+                            to="/login"
+                            className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-blue-600 border border-gray-300 rounded-md"
+                        >
+                            Login
+                        </Link>
+                        <Link
+                            to="/register"
+                            className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700"
+                        >
                             Sign Up
-                        </PrimaryButton>
+                        </Link>
                     </div>
 
                     {/* Mobile menu button */}
                     <div className="md:hidden">
                         <button
                             onClick={toggleMenu}
-                            className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-primary focus:outline-none"
+                            className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 focus:outline-none"
                         >
                             {isOpen ? <RxCross2 size={24} /> : <AiOutlineMenu size={24} />}
                         </button>
@@ -92,25 +105,26 @@ const Navbar = () => {
                 <div className="md:hidden">
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                         {navItems.map((item) => (
-                            <button
-                                key={item}
+                            <Link
+                                to={item.link}
+                                key={item.name}
                                 onClick={() => {
-                                    setActiveNav(item);
+                                    setActiveNav(item.name);
                                     setIsOpen(false);
                                 }}
-                                className={`${activeNav === item
+                                className={`block px-3 py-2 text-base font-medium w-full text-left ${activeNav === item.name
                                     ? 'text-primary'
                                     : 'text-gray-600 hover:text-primary'
-                                    } block px-3 py-2 text-base font-medium w-full text-left`}
+                                    }`}
                             >
-                                {item}
-                            </button>
+                                {item.name}
+                            </Link>
                         ))}
                         <div className="pt-4 space-y-2">
-                            <SecondaryButton className="mr-3">
+                            <SecondaryButton link="/login" className="mr-3">
                                 Login
                             </SecondaryButton>
-                            <PrimaryButton>
+                            <PrimaryButton link="/register">
                                 Sign Up
                             </PrimaryButton>
                         </div>
