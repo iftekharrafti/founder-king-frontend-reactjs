@@ -28,7 +28,7 @@ const PrivacyPolicy = () => {
         <MainTemplate>
             <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
                 {/* Hero Section */}
-                <section className="relative py-20 px-4 bg-gradient-to-r from-blue-600 to-indigo-600">
+                <section className="relative py-20 px-4 bg-gradient-to-r from-primary to-primary_hover">
                     <div className="max-w-7xl mx-auto text-center text-white">
                         <h1 className="text-5xl font-bold mb-6 animate-float">Privacy Policy</h1>
                         <p className="text-xl max-w-3xl mx-auto text-blue-100">
