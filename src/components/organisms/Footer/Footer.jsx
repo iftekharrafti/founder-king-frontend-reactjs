@@ -13,10 +13,11 @@ const Footer = () => {
     ];
 
     const aboutLinks = [
-        { text: 'Terms & Conditions', href: '#' },
-        { text: 'Privacy Policy', href: '#' },
-        { text: 'Contact', href: '#' },
-        { text: 'FAQ', href: '#' },
+        { text: 'About Us', href: '/about-us' },
+        { text: 'Terms & Conditions', href: '/terms-condition' },
+        { text: 'Privacy Policy', href: '/privacy-policy' },
+        { text: 'Contact', href: '/contact-us' },
+        { text: 'FAQ', href: '/faq' },
     ];
 
     return (

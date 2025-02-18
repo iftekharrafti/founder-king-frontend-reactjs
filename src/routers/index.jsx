@@ -6,6 +6,7 @@ import ThemePage from "../components/pages/ThemePage/ThemePage";
 import ServicePage from "../components/pages/ServicePage/ServicePage";
 import PricingPage from "../components/pages/PricingPage/PricingPage";
 import FaqPage from "../components/pages/FaqPage/FaqPage";
+import AboutUs from "../components/organisms/AboutUs/AboutUs";
 
 
 const router = createBrowserRouter([
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
             {
                 path: '/faq',
                 element: <FaqPage />,
+            },
+            {
+                path: '/about-us',
+                element: <AboutUs />,
             },
         ],
     }
