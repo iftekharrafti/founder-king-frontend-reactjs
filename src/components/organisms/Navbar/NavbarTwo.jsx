@@ -7,7 +7,7 @@ import Image from "@/components/atoms/Images/Image";
 import SecondaryButton from "@/components/atoms/Buttons/SecondaryButton";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const NavbarTwo = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeNav, setActiveNav] = useState('Home');
 
@@ -33,7 +33,6 @@ const Navbar = () => {
             link: '/faq'
         }
     ];
-    console.log("activeNav, ", activeNav);
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
@@ -42,6 +41,15 @@ const Navbar = () => {
         <nav className="w-full bg-white shadow-sm sticky z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
+
+                    {/* Auth Buttons */}
+                    <div className="hidden md:flex items-center space-x-4">
+                        <SecondaryButton link="/login">Login</SecondaryButton>
+                        <PrimaryButton link="/register">
+                            Sign Up
+                        </PrimaryButton>
+                    </div>
+
                     {/* Logo */}
                     <div className="flex-shrink-0 flex items-center">
                         <Link to="/">
@@ -54,9 +62,9 @@ const Navbar = () => {
                         <div className="ml-10 flex items-center space-x-8">
                             {navItems.map((item) => (
                                 <Link to={item.link}
-                                    key={item.name}
-                                    onClick={() => setActiveNav(item.name)}
-                                    className={`${activeNav === item.name
+                                    key={item}
+                                    onClick={() => setActiveNav(item)}
+                                    className={`${activeNav === item
                                         ? 'text-primary font-semibold'
                                         : 'text-gray-600 hover:text-primary'
                                         } px-3 py-2 text-sm font-medium transition-colors duration-200`}
@@ -67,13 +75,7 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    {/* Auth Buttons */}
-                    <div className="hidden md:flex items-center space-x-4">
-                        <SecondaryButton link="/login">Login</SecondaryButton>
-                        <PrimaryButton link="/register">
-                            Sign Up
-                        </PrimaryButton>
-                    </div>
+
 
                     {/* Mobile menu button */}
                     <div className="md:hidden">
@@ -121,4 +123,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default NavbarTwo;
