@@ -6,7 +6,7 @@ const InputField = ({ name, label, placeholder, type = "text", className, regist
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className={`flex flex-col gap-1 ${className}`}>
+    <div className={`flex flex-col gap-1 mb-2 ${className}`}>
       {label && <label className="text-primary font-medium">{label}</label>}
       {type === "password" ? (
         <div className="relative">
