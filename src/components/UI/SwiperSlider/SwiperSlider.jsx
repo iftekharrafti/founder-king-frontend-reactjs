@@ -1,4 +1,3 @@
-"use client";
 import React, { useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -7,15 +6,24 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const SwiperSlider = ({ children, lg, md, sm, icon = true, autoplay = false }) => {
+const SwiperSlider = ({
+  children,
+  lg,
+  md,
+  sm,
+  icon = true,
+  autoplay = false,
+}) => {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
   const swiperRef = useRef(null);
 
   useEffect(() => {
     if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.params.navigation.prevEl = navigationPrevRef.current;
-      swiperRef.current.swiper.params.navigation.nextEl = navigationNextRef.current;
+      swiperRef.current.swiper.params.navigation.prevEl =
+        navigationPrevRef.current;
+      swiperRef.current.swiper.params.navigation.nextEl =
+        navigationNextRef.current;
       swiperRef.current.swiper.navigation.init();
       swiperRef.current.swiper.navigation.update();
     }
