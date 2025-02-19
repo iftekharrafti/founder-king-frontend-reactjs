@@ -14,7 +14,6 @@ const Footer = () => {
 
     const aboutLinks = [
         { text: 'About Us', href: '/about-us' },
-        { text: 'Terms & Conditions', href: '/terms-condition' },
         { text: 'Privacy Policy', href: '/privacy-policy' },
         { text: 'Contact Us', href: '/contact-us' },
         { text: 'FAQ', href: '/faq' },
