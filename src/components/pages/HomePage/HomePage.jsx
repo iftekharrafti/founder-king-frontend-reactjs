@@ -10,6 +10,7 @@ import HappyCustomer from "@/components/organisms/HappyCustomer/HappyCustomer";
 import FaqItem from "@/components/molecules/FaqItem/FaqItem";
 import FaqSection from "@/components/organisms/FaqSection/FaqSection";
 import MainTemplate from "../../templates/MainTemplate/MainTemplate";
+import HeroSectionTwo from "../../organisms/HeroSection/HeroSectionTwo";
 
 const services = [
   {
@@ -180,6 +181,7 @@ const HomePage = () => {
       <MainTemplate>
         <div className=" bg-gradient-to-r from-black to-[rgb(26,26,81)]">
           <HeroSection />
+          {/* <HeroSectionTwo /> */}
 
           {/* Service Section */}
           <Section

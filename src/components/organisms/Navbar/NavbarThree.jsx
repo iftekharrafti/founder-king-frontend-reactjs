@@ -47,7 +47,9 @@ const NavbarThree = () => {
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
                     <div className="flex-shrink-0 font-bold text-xl">
-                        LOGO
+                        <Link to="/" className="text-primary font-bold text-xl"> 
+                            Founder King
+                        </Link>
                     </div>
 
                     {/* Desktop Navigation */}
