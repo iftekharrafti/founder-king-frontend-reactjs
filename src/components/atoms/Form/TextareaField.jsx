@@ -1,7 +1,14 @@
-"use client";
 import React from "react";
 
-const TextareaField = ({ name, label, placeholder, className, register, icon: Icon, rows = 4 }) => {
+const TextareaField = ({
+  name,
+  label,
+  placeholder,
+  className,
+  register,
+  icon: Icon,
+  rows = 4,
+}) => {
   return (
     <div className={`flex flex-col gap-1 ${className}`}>
       {label && <label className="text-primary font-medium">{label}</label>}

@@ -1,5 +1,3 @@
-"use client";
-
 import { AiFillFacebook } from "react-icons/ai";
 import IconButton from "@/components/atoms/Buttons/IconButton";
 import PrimaryButton from "@/components/atoms/Buttons/PrimaryButton";

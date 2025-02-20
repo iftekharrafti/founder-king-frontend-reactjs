@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { FiMinus, FiPlus } from "react-icons/fi";
 

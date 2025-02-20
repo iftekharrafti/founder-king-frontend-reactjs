@@ -1,8 +1,15 @@
-"use client";
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-const InputWithIconField = ({ name, label, placeholder, type = "text", className, register, icon: Icon }) => {
+const InputWithIconField = ({
+  name,
+  label,
+  placeholder,
+  type = "text",
+  className,
+  register,
+  icon: Icon,
+}) => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
