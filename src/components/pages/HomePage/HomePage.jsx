@@ -55,7 +55,7 @@ const services = [
       "Protecting your digital assets with comprehensive security solutions and best practices.",
   },
 ];
-
+// Pricing Data
 const pricingData = [
   {
       title: "Regular License",
