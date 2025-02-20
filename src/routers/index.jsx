@@ -11,6 +11,8 @@ import Checkout from "../components/pages/Checkout/Checkout";
 import AboutUs from "../components/pages/AboutUs/AboutUs";
 import ContactUs from "../components/pages/ContactUs/ContactUs";
 import PrivacyPolicy from "../components/pages/PrivacyPolicy/PrivacyPolicy";
+import ThemeOne from "../components/Theme/ThemeOne/ThemeOne";
+import ThemeTwo from "../components/Theme/ThemeTwo/ThemeTwo";
 
 
 const router = createBrowserRouter([
@@ -61,6 +63,14 @@ const router = createBrowserRouter([
             {
                 path: '/checkout',
                 element: <Checkout />,
+            },
+            {
+                path: '/theme/1',
+                element: <ThemeOne />,
+            },
+            {
+                path: '/theme/2',
+                element: <ThemeTwo />,
             },
         ],
     }
