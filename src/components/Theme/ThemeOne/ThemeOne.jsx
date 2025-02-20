@@ -1,10 +1,14 @@
 import React from 'react';
+import MainTemplate from '../../templates/MainTemplate/MainTemplate';
+import ThemeOneMainTemplate from '../../templates/ThemeOneMainTemplate/ThemeOneMainTemplate';
+import ThemeOneHeroSection from '../../organisms/ThemeOneHeroSection/ThemeOneHeroSection';
 
 const ThemeOne = () => {
     return (
         <div>
-            ThemeOne
-            ThemeOne
+            <ThemeOneMainTemplate>
+                <ThemeOneHeroSection />
+            </ThemeOneMainTemplate>
         </div>
     );
 };
