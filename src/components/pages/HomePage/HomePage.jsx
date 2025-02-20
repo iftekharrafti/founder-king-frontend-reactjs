@@ -11,6 +11,7 @@ import FaqItem from "@/components/molecules/FaqItem/FaqItem";
 import FaqSection from "@/components/organisms/FaqSection/FaqSection";
 import MainTemplate from "../../templates/MainTemplate/MainTemplate";
 
+// Service Data
 const services = [
   {
     imageUrl:
