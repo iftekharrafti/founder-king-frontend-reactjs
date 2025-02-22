@@ -13,6 +13,7 @@ const SwiperSlider = ({
   sm,
   icon = true,
   autoplay = false,
+  slidesPerView = 1
 }) => {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
@@ -54,7 +55,7 @@ const SwiperSlider = ({
         ref={swiperRef}
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={30}
-        slidesPerView={1}
+        // slidesPerView={slidesPerView}
         navigation={{
           prevEl: navigationPrevRef.current,
           nextEl: navigationNextRef.current,
