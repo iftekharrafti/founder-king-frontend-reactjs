@@ -1,139 +1,136 @@
-import { AiOutlineMenu } from "react-icons/ai";
-import { RxCross2 } from "react-icons/rx";
-import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useState } from 'react';
+import SearchInput from '../../atoms/SearchInput/SearchInput';
+import MobileMenuButton from '../../atoms/MobileMenuButton/MobileMenuButton';
+import NavActions from '../../molecules/NavActions/NavActions';
+import NavLinks from '../../molecules/NavLinks/NavLinks';
 
 const ThemeOneNavbar = () => {
-    const location = useLocation();
-    const [isOpen, setIsOpen] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    const navItems = [
+    const links = [
         {
-            name: "Home",
-            link: "/",
+            text: 'HOME',
+            href: '#',
+            isActive: true
         },
         {
-            name: "Feature",
-            link: "/feature",
+            text: 'ATTAR',
+            href: '#',
+            dropdownItems: [
+                { text: 'Arabian Attar', href: '#' },
+                { text: 'Indian Attar', href: '#' },
+                { text: 'Organic Attar', href: '#' },
+                { text: 'Premium Collection', href: '#' }
+            ]
         },
         {
-            name: "Theme",
-            link: "/theme",
+            text: "MEN'S CLOTHING",
+            href: '#',
+            dropdownItems: [
+                { text: 'T-Shirts', href: '#' },
+                { text: 'Shirts', href: '#' },
+                { text: 'Pants', href: '#' },
+                { text: 'Accessories', href: '#' }
+            ]
         },
         {
-            name: "Pricing",
-            link: "/pricing",
+            text: 'PANJABI',
+            href: '#',
+            dropdownItems: [
+                { text: 'Premium Panjabi', href: '#' },
+                { text: 'Regular Fit', href: '#' },
+                { text: 'Semi Fitted', href: '#' },
+                { text: 'Wedding Collection', href: '#' }
+            ]
         },
         {
-            name: "Faq",
-            link: "/faq",
+            text: 'WINTER 2024',
+            href: '#',
+            dropdownItems: [
+                { text: 'Jackets', href: '#' },
+                { text: 'Sweaters', href: '#' },
+                { text: 'Hoodies', href: '#' },
+                { text: 'Winter Accessories', href: '#' }
+            ]
+        },
+        {
+            text: 'FOODS',
+            href: '#',
+            dropdownItems: [
+                { text: 'Organic Honey', href: '#' },
+                { text: 'Dates', href: '#' },
+                { text: 'Nuts & Dry Fruits', href: '#' },
+                { text: 'Herbal Products', href: '#' }
+            ]
+        },
+        {
+            text: 'OTHERS',
+            href: '#',
+            dropdownItems: [
+                { text: 'Gift Sets', href: '#' },
+                { text: 'Islamic Items', href: '#' },
+                { text: 'Books', href: '#' },
+                { text: 'Accessories', href: '#' }
+            ]
         },
     ];
 
-    const [activeNav, setActiveNav] = useState(() => {
-        // Initialize based on current path
-        const path = location.pathname;
-        if (path === "/") return "Home";
-        return navItems.find((item) => item.link === path)?.name || "Home";
-    });
-
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
-
     return (
-        <nav className="w-full bg-white shadow-sm sticky z-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16">
-                    {/* Logo */}
-                    <div className="flex-shrink-0 flex items-center">
-                        <Link to="/">
-                            {/* <img
-                                src="/images/logo.png"
-                                alt="Logo"
-                                className="w-[260px] h-auto"
-                            /> */}
-                            <h3 className="text-xl font-bold text-primary">Theme 1</h3>
-                        </Link>
-                    </div>
+        <header className="bg-white shadow-md relative z-50">
+            {/* Top Bar */}
+            <div className="border-b border-gray-100">
+                <div className="max-w-7xl mx-auto px-4 py-4">
+                    <div className="flex items-center justify-between gap-4">
+                        {/* Logo */}
+                        <a href="/" className="flex-shrink-0">
+                            <img
+                                src="https://themeone.com/wp-content/uploads/2023/08/ThemeOne-logo.png"
+                                alt="Theme 1"
+                                className="h-8 sm:h-10 md:h-12 w-auto"
+                            />
+                        </a>
 
-                    {/* Desktop Navigation */}
-                    <div className="hidden md:block">
-                        <div className="ml-10 flex items-center space-x-8">
-                            {navItems.map((item) => (
-                                <Link
-                                    to={item.link}
-                                    key={item.name}
-                                    onClick={() => setActiveNav(item.name)}
-                                    className={`px-3 py-2 text-2xl font-medium transition-colors duration-200 rounded bg-opacity-80 ${activeNav === item.name
-                                            ? "text-white hover:text-white bg-primary font-semibold"
-                                            : "text-gray-600 hover:text-white hover:bg-primary "
-                                        }`}
-                                >
-                                    {item.name}
-                                </Link>
-                            ))}
+                        {/* Search */}
+                        <SearchInput />
+
+                        {/* Mobile Menu Button */}
+                        <MobileMenuButton
+                            isOpen={isMobileMenuOpen}
+                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        />
+
+                        {/* Actions */}
+                        <div className="hidden md:block">
+                            <NavActions />
                         </div>
                     </div>
 
-                    {/* Auth Buttons */}
-                    <div className="hidden md:flex items-center space-x-4">
-                        <Link
-                            to="/login"
-                            className="px-4 py-2 text-xl font-medium text-gray-600 hover:text-blue-600 border border-gray-300 rounded-md"
-                        >
-                            Login
-                        </Link>
-                        <Link
-                            to="/register"
-                            className="px-4 py-2 text-xl font-medium text-white hover:text-white bg-blue-600 rounded-md hover:bg-blue-700"
-                        >
-                            Sign Up
-                        </Link>
-                    </div>
-
-                    {/* Mobile menu button */}
-                    <div className="md:hidden">
-                        <button
-                            onClick={toggleMenu}
-                            className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 focus:outline-none"
-                        >
-                            {isOpen ? <RxCross2 size={24} /> : <AiOutlineMenu size={24} />}
-                        </button>
+                    {/* Mobile Search - Only visible on small screens */}
+                    <div className="mt-4 md:hidden">
+                        <div className="relative">
+                            <input
+                                type="text"
+                                placeholder="Search for products"
+                                className="w-full px-4 py-2 pl-10 rounded-lg border border-gray-200 
+                focus:border-orange-500 focus:ring-2 focus:ring-orange-200 
+                transition-all duration-300 outline-none"
+                            />
+                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                </svg>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            {/* Mobile menu */}
-            {isOpen && (
-                <div className="md:hidden">
-                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        {navItems.map((item) => (
-                            <Link
-                                to={item.link}
-                                key={item.name}
-                                onClick={() => {
-                                    setActiveNav(item.name);
-                                    setIsOpen(false);
-                                }}
-                                className={`block px-3 py-2 text-base font-medium w-full text-left ${activeNav === item.name
-                                        ? "text-primary"
-                                        : "text-gray-600 hover:text-primary"
-                                    }`}
-                            >
-                                {item.name}
-                            </Link>
-                        ))}
-                        <div className="pt-4 space-y-2">
-                            <SecondaryButton link="/login" className="mr-3">
-                                Login
-                            </SecondaryButton>
-                            <PrimaryButton link="/register">Sign Up</PrimaryButton>
-                        </div>
-                    </div>
-                </div>
-            )}
-        </nav>
+            {/* Navigation */}
+            <div className="max-w-7xl mx-auto px-4 py-2 relative">
+                <NavLinks links={links} isMobileMenuOpen={isMobileMenuOpen} />
+            </div>
+        </header>
     );
 };
 
