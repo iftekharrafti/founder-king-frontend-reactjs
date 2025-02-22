@@ -137,7 +137,11 @@ const ThemeOneNavbar = () => {
 
       {/* Navigation */}
       <div className="max-w-7xl mx-auto px-4 py-2 relative">
-        <NavLinks links={links} isMobileMenuOpen={isMobileMenuOpen} />
+        <NavLinks
+          linkClassName={"px-4 py-2 font-medium"}
+          links={links}
+          isMobileMenuOpen={isMobileMenuOpen}
+        />
       </div>
     </header>
   );

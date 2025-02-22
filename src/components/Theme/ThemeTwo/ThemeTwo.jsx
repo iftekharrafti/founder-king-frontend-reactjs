@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useColors } from "../../../context/colorContext";
+import ThemeTwoMainTemplate from "../../templates/ThemeTwoMainTemplate/ThemeTwoMainTemplate";
 
 const ThemeTwo = () => {
   const { updateThemeColors } = useColors();
@@ -23,24 +24,21 @@ const ThemeTwo = () => {
   }, []);
   return (
     <div>
-      {/* <h2 style={{ color: themeColors.secondaryColor }}>Hello</h2>
-      <p className={`text-[${themeColors.secondaryColor}]`}>
-        This text uses the theme secondary color
-      </p> */}
+      <ThemeTwoMainTemplate>
+        <div className="bg-global-primary hover:bg-global-primary-hover p-4 rounded">
+          <h2 className="text-white">Global Color Section</h2>
+          <p className="text-global-secondary">
+            This text uses the global secondary color
+          </p>
+        </div>
 
-      <div className="bg-global-primary hover:bg-global-primary-hover p-4 rounded">
-        <h2 className="text-white">Global Color Section</h2>
-        <p className="text-global-secondary">
-          This text uses the global secondary color
-        </p>
-      </div>
-
-      <div className="bg-theme-primary hover:bg-theme-primary-hover p-4 rounded">
-        <h2 className="text-white">Theme Color Section</h2>
-        <p className="text-theme-secondary">
-          This text uses the theme secondary color
-        </p>
-      </div>
+        <div className="bg-theme-primary hover:bg-theme-primary-hover p-4 rounded">
+          <h2 className="text-white">Theme Color Section</h2>
+          <p className="text-theme-secondary">
+            This text uses the theme secondary color
+          </p>
+        </div>
+      </ThemeTwoMainTemplate>
     </div>
   );
 };
