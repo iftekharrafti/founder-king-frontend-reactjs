@@ -14,67 +14,65 @@ import PrivacyPolicy from "../components/pages/PrivacyPolicy/PrivacyPolicy";
 import ThemeOne from "../components/Theme/ThemeOne/ThemeOne";
 import ThemeTwo from "../components/Theme/ThemeTwo/ThemeTwo";
 
-
 const router = createBrowserRouter([
-    {
-        path: '',
-        // errorElement: <Error />,
-        children: [
-            {
-                path: '',
-                element: <HomePage />,
-            },
-            {
-                path: '/login',
-                element: <LoginPage />,
-            },
-            {
-                path: '/register',
-                element: <RegisterPage />,
-            },
-            {
-                path: '/theme',
-                element: <ThemePage />,
-            },
-            {
-                path: '/feature',
-                element: <ServicePage />,
-            },
-            {
-                path: '/pricing',
-                element: <PricingPage />,
-            },
-            {
-                path: '/faq',
-                element: <FaqPage />,
-            },
-            {
-                path: '/about-us',
-                element: <AboutUs />,
-            },
-            {
-                path: '/contact-us',
-                element: <ContactUs />,
-            },
-            {
-                path: '/privacy-policy',
-                element: <PrivacyPolicy />,
-            },
-            {
-                path: '/checkout',
-                element: <Checkout />,
-            },
-            {
-                path: '/theme/1',
-                element: <ThemeOne />,
-            },
-            {
-                path: '/theme/2',
-                element: <ThemeTwo />,
-            },
-        ],
-    }
+  {
+    path: "",
+    // errorElement: <Error />,
+    children: [
+      {
+        path: "",
+        element: <HomePage />,
+      },
+      {
+        path: "/login",
+        element: <LoginPage />,
+      },
+      {
+        path: "/register",
+        element: <RegisterPage />,
+      },
+      {
+        path: "/theme",
+        element: <ThemePage />,
+      },
+      {
+        path: "/feature",
+        element: <ServicePage />,
+      },
+      {
+        path: "/pricing",
+        element: <PricingPage />,
+      },
+      {
+        path: "/faq",
+        element: <FaqPage />,
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs />,
+      },
+      {
+        path: "/contact-us",
+        element: <ContactUs />,
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicy />,
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />,
+      },
+      {
+        path: "/theme/1",
+        element: <ThemeOne />,
+      },
+      {
+        path: "/theme/2",
+        children: [{ path: "", element: <ThemeTwo /> }],
+      },
+    ],
+  },
 ]);
-
 
 export default router;
