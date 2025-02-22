@@ -32,6 +32,11 @@ module.exports = {
         primary: "#EB581E",
         primary_hover: "#b89600",
         secondary: "#2D16D3",
+
+        // Theme One color
+        theme_one_primary: "#b89600",
+        theme_one_primary_hover: "#b89609",
+        theme_one_secondary: "#2D16D3",
       },
     },
     container: {
