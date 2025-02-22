@@ -37,6 +37,19 @@ module.exports = {
         theme_one_primary: "#b89600",
         theme_one_primary_hover: "#b89609",
         theme_one_secondary: "#2D16D3",
+
+        global: {
+          primary: "var(--global-primary)",
+          secondary: "var(--global-secondary)",
+          "primary-hover": "var(--global-primary-hover)",
+          "secondary-hover": "var(--global-secondary-hover)",
+        },
+        theme: {
+          primary: "var(--theme-primary)",
+          secondary: "var(--theme-secondary)",
+          "primary-hover": "var(--theme-primary-hover)",
+          "secondary-hover": "var(--theme-secondary-hover)",
+        },
       },
     },
     container: {
