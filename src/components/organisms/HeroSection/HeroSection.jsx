@@ -12,7 +12,7 @@ const HeroSection = () => {
           <div className="space-y-8 animate-float">
             <Heading
               type="main"
-              className="md:text-[32px] text-24px md:leading-[45px] leading-[32px] text-primary"
+              className="md:text-[32px] text-24px md:leading-[45px] leading-[32px] text-global-primary"
             >
               Create Leads, Sell Products, Run Courses, and Create High
               Converting <span className="text-[#00ff00]">Sales Funnels</span>

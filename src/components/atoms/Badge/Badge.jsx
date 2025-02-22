@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const Badge = ({ text, type = "default" }) => {
@@ -6,11 +5,13 @@ const Badge = ({ text, type = "default" }) => {
     new: "bg-green-500 text-white",
     sale: "bg-red-500 text-white",
     outOfStock: "bg-gray-500 text-white",
-    default: "bg-secondary text-white",
+    default: "bg-global-secondary text-white",
   };
 
   return (
-    <span className={`px-2 py-1 text-xs font-semibold rounded ${badgeColors[type]}`}>
+    <span
+      className={`px-2 py-1 text-xs font-semibold rounded ${badgeColors[type]}`}
+    >
       {text}
     </span>
   );

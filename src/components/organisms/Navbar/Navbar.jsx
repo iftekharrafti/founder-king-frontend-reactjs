@@ -66,8 +66,8 @@ const Navbar = () => {
                   onClick={() => setActiveNav(item.name)}
                   className={`px-3 py-2 text-2xl font-medium transition-colors duration-200 rounded bg-opacity-80 ${
                     activeNav === item.name
-                      ? "text-white hover:text-white bg-primary font-semibold"
-                      : "text-gray-600 hover:text-white hover:bg-primary "
+                      ? "text-white hover:text-white bg-global-primary font-semibold"
+                      : "text-gray-600 hover:text-white hover:bg-global-primary-hover "
                   }`}
                 >
                   {item.name}
@@ -118,8 +118,8 @@ const Navbar = () => {
                 }}
                 className={`block px-3 py-2 text-base font-medium w-full text-left ${
                   activeNav === item.name
-                    ? "text-primary"
-                    : "text-gray-600 hover:text-primary"
+                    ? "text-global-primary"
+                    : "text-gray-600 hover:text-global-primary-hover"
                 }`}
               >
                 {item.name}

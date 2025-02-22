@@ -15,7 +15,7 @@ const QuantitySelector = ({ name, className, setValue, getValues }) => {
       <button
         type="button"
         onClick={handleDecrease}
-        className="bg-secondary text-white p-2 rounded-md"
+        className="bg-global-secondary text-white p-2 rounded-md"
       >
         <FiMinus />
       </button>
@@ -25,7 +25,7 @@ const QuantitySelector = ({ name, className, setValue, getValues }) => {
       <button
         type="button"
         onClick={handleIncrease}
-        className="bg-primary text-white p-2 rounded-md"
+        className="bg-global-primary text-white p-2 rounded-md"
       >
         <FiPlus />
       </button>

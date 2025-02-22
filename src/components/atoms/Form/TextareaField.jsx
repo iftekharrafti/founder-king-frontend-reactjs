@@ -11,7 +11,9 @@ const TextareaField = ({
 }) => {
   return (
     <div className={`flex flex-col gap-1 ${className}`}>
-      {label && <label className="text-primary font-medium">{label}</label>}
+      {label && (
+        <label className="text-global-primary font-medium">{label}</label>
+      )}
 
       <div className="relative">
         {Icon && (

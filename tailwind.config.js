@@ -29,9 +29,9 @@ module.exports = {
       },
       colors: {
         // primary: '#b89600',
-        primary: "#EB581E",
-        primary_hover: "#b89600",
-        secondary: "#2D16D3",
+        // primary: "#EB581E",
+        // primary_hover: "#b89600",
+        // secondary: "#2D16D3",
 
         // Theme One color
         theme_one_primary: "#b89600",

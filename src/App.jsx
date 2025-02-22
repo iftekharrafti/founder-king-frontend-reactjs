@@ -12,10 +12,10 @@ function App() {
   useEffect(() => {
     const fetchGlobalColors = async () => {
       const globalColors = {
-        primaryColor: "#3B82F6",
-        secondaryColor: "#6B7280",
-        primaryColorHover: "#2563EB",
-        secondaryColorHover: "#4B5563",
+        primaryColor: "#EB581E",
+        secondaryColor: "#2D16D3",
+        primaryColorHover: "#b89600",
+        secondaryColorHover: "#2D1664",
       };
 
       updateGlobalColors(globalColors);

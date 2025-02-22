@@ -1,13 +1,22 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-const InputField = ({ name, label, placeholder, type = "text", className, register }) => {
+const InputField = ({
+  name,
+  label,
+  placeholder,
+  type = "text",
+  className,
+  register,
+}) => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
     <div className={`flex flex-col gap-1 mb-2 ${className}`}>
-      {label && <label className="text-primary font-medium">{label}</label>}
+      {label && (
+        <label className="text-global-primary font-medium">{label}</label>
+      )}
       {type === "password" ? (
         <div className="relative">
           <input

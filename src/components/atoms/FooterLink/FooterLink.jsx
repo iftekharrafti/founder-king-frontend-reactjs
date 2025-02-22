@@ -1,12 +1,11 @@
-
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const FooterLink = ({ href, children }) => {
   return (
-    <Link 
+    <Link
       to={href}
-      className="text-gray-600 hover:text-primary transition-colors duration-300"
+      className="text-gray-600 hover:text-global-primary-hover transition-colors duration-300"
     >
       {children}
     </Link>
