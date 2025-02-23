@@ -13,6 +13,7 @@ import ContactUs from "../components/pages/ContactUs/ContactUs";
 import PrivacyPolicy from "../components/pages/PrivacyPolicy/PrivacyPolicy";
 import ThemeOne from "../components/Theme/ThemeOne/ThemeOne";
 import ThemeTwo from "../components/Theme/ThemeTwo/ThemeTwo";
+import AddtoCart from "../components/organisms/AddtoCart/AddtoCart";
 
 const router = createBrowserRouter([
   {
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
       {
         path: "/theme/2",
         children: [{ path: "", element: <ThemeTwo /> }],
+      },
+      {
+        path: "/add-to-cart",
+        element: <AddtoCart />,
       },
     ],
   },

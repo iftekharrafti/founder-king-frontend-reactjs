@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const CartButton = ({ count = 0 }) => {
     return (
-        <Link to="/cart">
+        <Link to="/add-to-cart">
             <button className="relative p-2 text-gray-700 hover:text-orange-500 transition-colors duration-300">
                 <FaShoppingCart className="text-2xl" />
                 {count > 0 && (
