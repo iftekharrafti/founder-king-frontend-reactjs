@@ -14,6 +14,7 @@ import PrivacyPolicy from "../components/pages/PrivacyPolicy/PrivacyPolicy";
 import ThemeOne from "../components/Theme/ThemeOne/ThemeOne";
 import ThemeTwo from "../components/Theme/ThemeTwo/ThemeTwo";
 import AddtoCart from "../components/organisms/AddtoCart/AddtoCart";
+import Wishlist from "../components/organisms/Wishlist/Wishlist";
 
 const router = createBrowserRouter([
   {
@@ -75,6 +76,10 @@ const router = createBrowserRouter([
       {
         path: "/add-to-cart",
         element: <AddtoCart />,
+      },
+      {
+        path: "/wishlist",
+        element: <Wishlist />,
       },
     ],
   },
