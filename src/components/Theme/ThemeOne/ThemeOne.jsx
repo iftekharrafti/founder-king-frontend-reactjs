@@ -6,6 +6,7 @@ import FeatureProductsSection from '../../UI/FeatureProductsSection/FeatureProdu
 import Section from '../../templates/Section/Section';
 import TestimonialsSection from '../../organisms/TestimonialsSection/TestimonialsSection';
 import { useColors } from '../../../context/colorContext';
+import ThemeOneTopCategoriesSection from '../../organisms/TopCategoriesSection/ThemeOneTopCategoriesSection';
 
 const ThemeOne = () => {
     const products = [
@@ -73,6 +74,7 @@ const ThemeOne = () => {
                 <ThemeOneHeroSection />
                 <ThemeOneProductCategory />
                 <FeatureProductsSection products={products} heading="Featured Products" />
+                <ThemeOneTopCategoriesSection />
                 <FeatureProductsSection products={products} heading="New Arrivals" />
                 <Section
                     heading={"OUR HAPPY CLIENTS"}
