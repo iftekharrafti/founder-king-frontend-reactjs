@@ -4,7 +4,7 @@ import Heading from '../../atoms/Text/Heading';
 import PrimaryButton from '../../atoms/Buttons/PrimaryButton';
 import SecondaryButton from '../../atoms/Buttons/SecondaryButton';
 
-const ThemeOneHeroContent = () => {
+const ThemeOneBannerContent = () => {
     return (
         <div className="space-y-8">
             <Heading type='main'>
@@ -50,4 +50,4 @@ const ThemeOneHeroContent = () => {
     );
 };
 
-export default ThemeOneHeroContent;
+export default ThemeOneBannerContent;

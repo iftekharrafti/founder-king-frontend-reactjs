@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import ThemeOneMainTemplate from '../../templates/ThemeOneMainTemplate/ThemeOneMainTemplate';
-import ThemeOneHeroSection from '../../organisms/ThemeOneHeroSection/ThemeOneHeroSection';
+import ThemeOneBannerContentSection from '../../organisms/ThemeOneHeroSection/ThemeOneHeroSection';
 import ThemeOneProductCategory from '../../organisms/ThemeOneProductCategory/ThemeOneProductCategory';
 import FeatureProductsSection from '../../UI/FeatureProductsSection/FeatureProductsSection';
 import Section from '../../templates/Section/Section';
@@ -71,11 +71,11 @@ const ThemeOne = () => {
     return (
         <div>
             <ThemeOneMainTemplate>
-                <ThemeOneHeroSection />
                 <ThemeOneProductCategory />
                 <FeatureProductsSection products={products} heading="Featured Products" />
                 <ThemeOneTopCategoriesSection />
                 <FeatureProductsSection products={products} heading="New Arrivals" />
+                <ThemeOneBannerContentSection />
                 <Section
                     heading={"OUR HAPPY CLIENTS"}
                     className={"bg-white"}

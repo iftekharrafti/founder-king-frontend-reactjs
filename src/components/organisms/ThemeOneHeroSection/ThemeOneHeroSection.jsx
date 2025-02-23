@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from '../../atoms/Images/Image';
-import ThemeOneHeroContent from '../ThemeOneHeroContent/ThemeOneHeroContent';
+import ThemeOneBannerContent from '../ThemeOneHeroContent/ThemeOneHeroContent';
 
-const ThemeOneHeroSection = () => {
+const ThemeOneBannerContentSection = () => {
     return (
         <div>
             <section className="bg-gradient-to-br from-white via-indigo-50/30 to-purple-50/30 py-20 px-4">
@@ -10,7 +10,7 @@ const ThemeOneHeroSection = () => {
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         {/* Left Column - Content */}
                         <div className="order-2 lg:order-1">
-                            <ThemeOneHeroContent />
+                            <ThemeOneBannerContent />
                         </div>
 
                         {/* Right Column - Image */}
@@ -32,4 +32,4 @@ const ThemeOneHeroSection = () => {
     );
 };
 
-export default ThemeOneHeroSection;
+export default ThemeOneBannerContentSection;
