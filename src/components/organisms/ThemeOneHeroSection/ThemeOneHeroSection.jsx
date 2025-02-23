@@ -5,7 +5,7 @@ import ThemeOneHeroContent from '../ThemeOneHeroContent/ThemeOneHeroContent';
 const ThemeOneHeroSection = () => {
     return (
         <div>
-            <section className="min-h-screen bg-gradient-to-br from-white via-indigo-50/30 to-purple-50/30 py-20 px-4">
+            <section className="bg-gradient-to-br from-white via-indigo-50/30 to-purple-50/30 py-20 px-4">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         {/* Left Column - Content */}
