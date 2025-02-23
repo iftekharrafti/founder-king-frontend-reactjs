@@ -229,7 +229,7 @@ const HomePage = () => {
           </Section>
           {/* Service Section */}
           <Section
-            heading={"OUR HAPPY CLIENTS"}
+            heading={"TESTIMONIALS"}
             className={"bg-white"}
           >
             <TestimonialsSection />

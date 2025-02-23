@@ -74,7 +74,7 @@ const SwiperSlider = ({
           768: { slidesPerView: md },
           1024: { slidesPerView: lg },
         }}
-        className="py-8"
+        className="py-2"
       >
         {React.Children.map(children, (child, index) =>
           React.cloneElement(child, { key: index })

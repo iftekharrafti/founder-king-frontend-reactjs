@@ -10,7 +10,7 @@ const TestimonialsSection = () => {
     {
       text: "founderking.com.bd সম্পর্কে সবচেয়ে ভালো লিংক হব তাদের ব্যবসা-যুক্ত ওয়েবসাইট রূপান্তরকরণ। যে কোনো সময় কোনো সমস্যা হলে, তারা তা দ্রুত সমাধান করে, যা আমার ব্যবসাকে সুগঠভাবে চলতে দেয়।",
       image: "https://randomuser.me/api/portraits/men/1.jpg",
-      name: "Saimur Rahman Shaisob",
+      name: "Saimur Rahman",
       company: "",
       rating: "5.0",
     },
@@ -45,7 +45,7 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="md:py-14 py-0 px-4">
+    <section className="md:py-4 py-0 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="relative">
           <SwiperSlider lg={3} md={2} sm={1}>

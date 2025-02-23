@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ThemeOneMainTemplate from '../../templates/ThemeOneMainTemplate/ThemeOneMainTemplate';
 import ThemeOneHeroSection from '../../organisms/ThemeOneHeroSection/ThemeOneHeroSection';
 import ThemeOneProductCategory from '../../organisms/ThemeOneProductCategory/ThemeOneProductCategory';
 import FeatureProductsSection from '../../UI/FeatureProductsSection/FeatureProductsSection';
+import Section from '../../templates/Section/Section';
+import TestimonialsSection from '../../organisms/TestimonialsSection/TestimonialsSection';
+import { useColors } from '../../../context/colorContext';
 
 const ThemeOne = () => {
     const products = [
@@ -42,6 +45,28 @@ const ThemeOne = () => {
             hoverImage: "https://img.freepik.com/premium-photo/vintage-style-chic-fashion-accessories-lady-set_161568-2367.jpg?ga=GA1.1.654311608.1722150614&semt=ais_hybrid"
         },
     ];
+
+
+
+    const { updateThemeColors } = useColors();
+
+    useEffect(() => {
+        // Example: Update only theme colors
+        const fetchThemeColors = async () => {
+            // Simulate API call for theme colors
+            const themeColors = {
+                primaryColor: "#10B981",
+                secondaryColor: "#6366F1",
+                primaryColorHover: "#059669",
+                secondaryColorHover: "#4F46E5",
+            };
+
+            updateThemeColors(themeColors);
+        };
+
+        // Only call fetchThemeColors when needed
+        fetchThemeColors();
+    }, []);
     return (
         <div>
             <ThemeOneMainTemplate>
@@ -49,6 +74,12 @@ const ThemeOne = () => {
                 <ThemeOneProductCategory />
                 <FeatureProductsSection products={products} heading="Featured Products" />
                 <FeatureProductsSection products={products} heading="New Arrivals" />
+                <Section
+                    heading={"OUR HAPPY CLIENTS"}
+                    className={"bg-white"}
+                >
+                    <TestimonialsSection />
+                </Section>
             </ThemeOneMainTemplate>
         </div>
     );
