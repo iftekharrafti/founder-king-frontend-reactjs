@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useColors } from "../../../context/colorContext";
 import ThemeTwoMainTemplate from "../../templates/ThemeTwoMainTemplate/ThemeTwoMainTemplate";
+import ThemeTwoHeroSection from "../../organisms/HeroSection/ThemeTwoHeroSection";
 
 const ThemeTwo = () => {
   const { updateThemeColors } = useColors();
@@ -22,22 +23,28 @@ const ThemeTwo = () => {
     // Only call fetchThemeColors when needed
     fetchThemeColors();
   }, []);
+
+  const heroSlides = [
+    {
+      imageUrl:
+        "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2070",
+      imageAlt: "Beautiful mountain landscape",
+    },
+    {
+      imageUrl:
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070",
+      imageAlt: "Scenic mountain view",
+    },
+    {
+      imageUrl:
+        "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2070",
+      imageAlt: "Sunset over the ocean",
+    },
+  ];
   return (
     <div>
       <ThemeTwoMainTemplate>
-        <div className="bg-global-primary hover:bg-global-primary-hover p-4 rounded">
-          <h2 className="text-white">Global Color Section</h2>
-          <p className="text-global-secondary">
-            This text uses the global secondary color
-          </p>
-        </div>
-
-        <div className="bg-theme-primary hover:bg-theme-primary-hover p-4 rounded">
-          <h2 className="text-white">Theme Color Section</h2>
-          <p className="text-theme-secondary">
-            This text uses the theme secondary color
-          </p>
-        </div>
+        <ThemeTwoHeroSection slides={heroSlides} />
       </ThemeTwoMainTemplate>
     </div>
   );

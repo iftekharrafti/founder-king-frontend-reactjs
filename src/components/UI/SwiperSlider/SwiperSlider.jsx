@@ -13,7 +13,8 @@ const SwiperSlider = ({
   sm,
   icon = true,
   autoplay = false,
-  slidesPerView = 1
+  slidesPerView = 1,
+  className = "",
 }) => {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
@@ -37,13 +38,13 @@ const SwiperSlider = ({
         <div>
           <div
             ref={navigationPrevRef}
-            className="custom-prev-icon text-[32px] absolute top-[36%] left-[-25px] cursor-pointer w-[50px] h-[50px] bg-[#b3b3b3] rounded-[50%] flex justify-center items-center z-30 hover:bg-black text-white"
+            className="custom-prev-icon text-[32px] absolute top-[36%] left-[5px] cursor-pointer w-[50px] h-[50px] bg-[#b3b3b3] rounded-[50%] flex justify-center items-center z-30 hover:bg-black text-white"
           >
             <RiArrowLeftSLine />
           </div>
           <div
             ref={navigationNextRef}
-            className="custom-next-icon text-[32px] absolute top-[36%] right-[-25px] cursor-pointer w-[50px] h-[50px] bg-[#b3b3b3] rounded-[50%] flex justify-center items-center z-30 hover:bg-black text-white"
+            className="custom-next-icon text-[32px] absolute top-[36%] right-[5px] cursor-pointer w-[50px] h-[50px] bg-[#b3b3b3] rounded-[50%] flex justify-center items-center z-30 hover:bg-black text-white"
           >
             <RiArrowRightSLine />
           </div>
@@ -61,6 +62,7 @@ const SwiperSlider = ({
           nextEl: navigationNextRef.current,
         }}
         pagination={{ clickable: true }}
+        loop={true}
         autoplay={
           autoplay
             ? {
@@ -74,7 +76,7 @@ const SwiperSlider = ({
           768: { slidesPerView: md },
           1024: { slidesPerView: lg },
         }}
-        className="py-8"
+        className={`${className}`}
       >
         {React.Children.map(children, (child, index) =>
           React.cloneElement(child, { key: index })
