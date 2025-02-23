@@ -15,6 +15,7 @@ const SwiperSlider = ({
   autoplay = false,
   slidesPerView = 1,
   className = "",
+  fullscreen = false,
 }) => {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
@@ -38,13 +39,17 @@ const SwiperSlider = ({
         <div>
           <div
             ref={navigationPrevRef}
-            className="custom-prev-icon text-[32px] absolute top-[36%] left-[5px] cursor-pointer w-[50px] h-[50px] bg-[#b3b3b3] rounded-[50%] flex justify-center items-center z-30 hover:bg-black text-white"
+            className={`custom-prev-icon text-[32px] absolute top-[36%] left-[${
+              fullscreen ? "5px" : "-25px"
+            }] cursor-pointer w-[50px] h-[50px] bg-[#b3b3b3] rounded-[50%] flex justify-center items-center z-30 hover:bg-black text-white`}
           >
             <RiArrowLeftSLine />
           </div>
           <div
             ref={navigationNextRef}
-            className="custom-next-icon text-[32px] absolute top-[36%] right-[5px] cursor-pointer w-[50px] h-[50px] bg-[#b3b3b3] rounded-[50%] flex justify-center items-center z-30 hover:bg-black text-white"
+            className={`custom-next-icon text-[32px] absolute top-[36%] right-[${
+              fullscreen ? "5px" : "-25px"
+            }]  cursor-pointer w-[50px] h-[50px] bg-[#b3b3b3] rounded-[50%] flex justify-center items-center z-30 hover:bg-black text-white`}
           >
             <RiArrowRightSLine />
           </div>
