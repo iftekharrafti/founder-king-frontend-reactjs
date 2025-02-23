@@ -7,6 +7,7 @@ import Section from '../../templates/Section/Section';
 import TestimonialsSection from '../../organisms/TestimonialsSection/TestimonialsSection';
 import { useColors } from '../../../context/colorContext';
 import ThemeOneTopCategoriesSection from '../../organisms/TopCategoriesSection/ThemeOneTopCategoriesSection';
+import ThemeOneHeroSection from '../../organisms/HeroSection/ThemeOneHeroSection';
 
 const ThemeOne = () => {
     const products = [
@@ -62,6 +63,23 @@ const ThemeOne = () => {
         },
     ];
 
+    const heroSlides = [
+        {
+            imageUrl:
+                "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2070",
+            imageAlt: "Beautiful mountain landscape",
+        },
+        {
+            imageUrl:
+                "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070",
+            imageAlt: "Scenic mountain view",
+        },
+        {
+            imageUrl:
+                "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2070",
+            imageAlt: "Sunset over the ocean",
+        },
+    ];
 
     const { updateThemeColors } = useColors();
 
@@ -85,6 +103,7 @@ const ThemeOne = () => {
     return (
         <div>
             <ThemeOneMainTemplate>
+                <ThemeOneHeroSection slides={heroSlides} />
                 <ThemeOneProductCategory />
                 <FeatureProductsSection products={products} heading="Featured Products" />
                 <ThemeOneTopCategoriesSection />

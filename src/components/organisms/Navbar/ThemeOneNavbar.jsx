@@ -3,6 +3,7 @@ import SearchInput from "../../atoms/SearchInput/SearchInput";
 import MobileMenuButton from "../../atoms/MobileMenuButton/MobileMenuButton";
 import NavActions from "../../molecules/NavActions/NavActions";
 import NavLinks from "../../molecules/NavLinks/NavLinks";
+import { Link } from "react-router-dom";
 
 const ThemeOneNavbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -82,13 +83,13 @@ const ThemeOneNavbar = () => {
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between gap-4">
             {/* Logo */}
-            <a href="/" className="flex-shrink-0">
+            <Link to="/theme/1" className="flex-shrink-0">
               <img
                 src="https://themeone.com/wp-content/uploads/2023/08/ThemeOne-logo.png"
                 alt="Theme 1"
                 className="h-8 sm:h-10 md:h-12 w-auto"
               />
-            </a>
+            </Link>
 
             {/* Search */}
             <SearchInput />
