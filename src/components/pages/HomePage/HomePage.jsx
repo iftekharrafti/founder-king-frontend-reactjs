@@ -10,9 +10,12 @@ import HappyCustomer from "@/components/organisms/HappyCustomer/HappyCustomer";
 import FaqItem from "@/components/molecules/FaqItem/FaqItem";
 import FaqSection from "@/components/organisms/FaqSection/FaqSection";
 import MainTemplate from "../../templates/MainTemplate/MainTemplate";
-import { fetcher } from "../../atoms/SWRFetcher/SWRFetcher";
+import { fetcher } from "../../../utils/SWRFetcher/SWRFetcher";
 import useSWR from "swr";
 import envConfig from "../../../../envconfig";
+import { HelmetProvider } from "react-helmet-async";
+import MetaTags from "../../../utils/MetaTags/MetaTags";
+import { useGeneralSettings } from "../../../context/generalSettingsContext";
 
 // Service Data
 const services = [
@@ -180,6 +183,8 @@ const landingPageImage = [
 ];
 const HomePage = () => {
 
+  const { generalSettings, errorGeneralSettings, isLoadingGeneralSettings } = useGeneralSettings();
+
   const {
     data: homeSectionData,
     error: errorHomeSectionData,
@@ -188,75 +193,85 @@ const HomePage = () => {
     `${envConfig.apiUrl}home`,
     fetcher
   );
-  console.log("object", homeSectionData);
+
+  console.log("object", generalSettings);
 
 
   return (
     <div>
       <MainTemplate>
-        <div className=" bg-gradient-to-r from-black to-[rgb(26,26,81)]">
-          <HeroSection slider={homeSectionData?.data?.slider} />
-          {/* <HeroSectionTwo /> */}
+        <HelmetProvider>
+          <MetaTags
+            title={generalSettings?.data?.name}
+            description={generalSettings?.data?.meta_description}
+            keywords={generalSettings?.data?.meta_keywords}
+            favicon={generalSettings?.data?.favicon}
+            image={generalSettings?.data?.logo}
+          />
+          <div className=" bg-gradient-to-r from-black to-[rgb(26,26,81)]">
+            <HeroSection slider={homeSectionData?.data?.slider} />
+            {/* <HeroSectionTwo /> */}
 
-          {/* Service Section */}
-          <Section
-            heading={"Our Services"}
-            subHeading={
-              "Discover our comprehensive range of solutions designed to help your business thrive in the digital age"
-            }
-            className={"bg-gray-100"}
-          >
-            <ServicesSection data={services} />
-          </Section>
-          {/* Service Section */}
-          <Section
-            heading={"Our Happy Clients"}
-            className={"bg-white pb-12"}
-          >
-            <HappyCustomer />
-          </Section>
+            {/* Service Section */}
+            <Section
+              heading={"Our Services"}
+              subHeading={
+                "Discover our comprehensive range of solutions designed to help your business thrive in the digital age"
+              }
+              className={"bg-gray-100"}
+            >
+              <ServicesSection data={services} />
+            </Section>
+            {/* Service Section */}
+            <Section
+              heading={"Our Happy Clients"}
+              className={"bg-white pb-12"}
+            >
+              <HappyCustomer />
+            </Section>
 
-          {/* Pricing Section */}
-          <Section
-            heading={"Affordable Pricing Based On Your Needs"}
-            className={"bg-gray-100"}
-          >
-            <PricingSection pricingData={pricingData} />
-          </Section>
+            {/* Pricing Section */}
+            <Section
+              heading={"Affordable Pricing Based On Your Needs"}
+              className={"bg-gray-100"}
+            >
+              <PricingSection pricingData={pricingData} />
+            </Section>
 
-          {/* Landing Page Section */}
-          <Section
-            heading={"20+ Done Landing Pages For You"}
-            className={"bg-white"}
-            subHeading={
-              "Our “Done For You Templates” will allow you to start creating your pages in just minutes. We have used our best sales, marketing & conversion hacks on these pages to make them convert more. Just drag & drop your own content, add your branding and you are done."
-            }
-          >
-            <LandingPageSection data={landingPageImage} />
-          </Section>
+            {/* Landing Page Section */}
+            <Section
+              heading={"20+ Done Landing Pages For You"}
+              className={"bg-white"}
+              subHeading={
+                "Our “Done For You Templates” will allow you to start creating your pages in just minutes. We have used our best sales, marketing & conversion hacks on these pages to make them convert more. Just drag & drop your own content, add your branding and you are done."
+              }
+            >
+              <LandingPageSection data={landingPageImage} />
+            </Section>
 
-          {/* Stats Section */}
-          <Section
-            heading={"Our Impact in Figures"}
-            className={"bg-gray-100"}
-          >
-            <StatsSection />
-          </Section>
-          {/* Service Section */}
-          <Section
-            heading={"TESTIMONIALS"}
-            className={"bg-white"}
-          >
-            <TestimonialsSection />
-          </Section>
-          {/* Faq Section */}
-          <Section
-            heading={"Frequently Asked Questions"}
-            className={"bg-gray-100"}
-          >
-            <FaqSection />
-          </Section>
-        </div>
+            {/* Stats Section */}
+            <Section
+              heading={"Our Impact in Figures"}
+              className={"bg-gray-100"}
+            >
+              <StatsSection />
+            </Section>
+            {/* Service Section */}
+            <Section
+              heading={"TESTIMONIALS"}
+              className={"bg-white"}
+            >
+              <TestimonialsSection />
+            </Section>
+            {/* Faq Section */}
+            <Section
+              heading={"Frequently Asked Questions"}
+              className={"bg-gray-100"}
+            >
+              <FaqSection />
+            </Section>
+          </div>
+        </HelmetProvider>
       </MainTemplate>
     </div>
   );

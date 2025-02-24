@@ -2,10 +2,13 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { RxCross2 } from "react-icons/rx";
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useGeneralSettings } from "../../../context/generalSettingsContext";
 
 const Navbar = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+
+  const { generalSettings, errorGeneralSettings, isLoadingGeneralSettings } = useGeneralSettings();
 
   const navItems = [
     {
@@ -49,7 +52,7 @@ const Navbar = () => {
           <div className="flex-shrink-0 flex items-center">
             <Link to="/">
               <img
-                src="/images/logo.png"
+                src={generalSettings?.data?.logo}
                 alt="Logo"
                 className="w-[260px] h-auto"
               />
