@@ -4,9 +4,9 @@ import PrimaryButton from "@/components/atoms/Buttons/PrimaryButton";
 import GridTemplate from "@/components/UI/GridTemplate/GridTemplate";
 import Heading from "@/components/atoms/Text/Heading";
 
-const HeroSection = () => {
+const HeroSection = ({ slider }) => {
   return (
-    <section className="bg-gray-900 text-white py-20 px-4 sm:px-6 lg:px-8">
+    <section className={`bg-${slider?.bg_color} text-white py-20 px-4 sm:px-6 lg:px-8`}>
       <div className="max-w-7xl mx-auto">
         <GridTemplate columns={2} className="items-center">
           <div className="space-y-8 animate-float">
@@ -14,8 +14,7 @@ const HeroSection = () => {
               type="main"
               className="md:text-[32px] text-24px md:leading-[45px] leading-[32px] text-global-primary"
             >
-              Create Leads, Sell Products, Run Courses, and Create High
-              Converting <span className="text-[#00ff00]">Sales Funnels</span>
+              {slider?.title} <span className="text-[#00ff00]">{slider?.title_end}</span>
             </Heading>
             <Heading
               type="sub"
@@ -26,7 +25,7 @@ const HeroSection = () => {
           </div>
 
           <div>
-            <VideoPlayer videoId="W6BlwzAhJ88?si=ZEC1x40gebxaDfgf" />
+            <VideoPlayer videoId={slider?.video_url} />
           </div>
           {/* </div> */}
         </GridTemplate>
@@ -34,11 +33,10 @@ const HeroSection = () => {
         {/* Bottom Section */}
         <div className="mt-20 text-center">
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            From Grabbing Visitors' Attention To Converting Them Into Leads And
-            Sales…
+            {slider?.button_details}
           </p>
-          <PrimaryButton className="md:text-[24px] text-lg font-semibold">
-            Get Started With Founder King
+          <PrimaryButton className="md:text-[24px] text-lg font-semibold" link={slider?.button_url}>
+            {slider?.button_text}
           </PrimaryButton>
         </div>
       </div>

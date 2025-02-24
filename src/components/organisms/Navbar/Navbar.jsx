@@ -64,7 +64,7 @@ const Navbar = () => {
                   to={item.link}
                   key={item.name}
                   onClick={() => setActiveNav(item.name)}
-                  className={`px-3 py-2 text-2xl font-medium transition-colors duration-200 rounded bg-opacity-80 ${
+                  className={`px-3 py-1 text-xl font-medium transition-colors duration-200 rounded bg-opacity-80 ${
                     activeNav === item.name
                       ? "text-white hover:text-white bg-global-primary font-semibold"
                       : "text-gray-600 hover:text-white hover:bg-global-primary-hover "

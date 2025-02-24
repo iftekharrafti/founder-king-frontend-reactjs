@@ -10,6 +10,9 @@ import HappyCustomer from "@/components/organisms/HappyCustomer/HappyCustomer";
 import FaqItem from "@/components/molecules/FaqItem/FaqItem";
 import FaqSection from "@/components/organisms/FaqSection/FaqSection";
 import MainTemplate from "../../templates/MainTemplate/MainTemplate";
+import { fetcher } from "../../atoms/SWRFetcher/SWRFetcher";
+import useSWR from "swr";
+import envConfig from "../../../../envconfig";
 
 // Service Data
 const services = [
@@ -59,67 +62,67 @@ const services = [
 // Pricing Data
 const pricingData = [
   {
-      title: "Regular License",
-      price: "5000",
-      originalPrice: "7000",
-      features: [
-          { text: "Incomplete Order tracking", included: true },
-          { text: "customizable Landing pages", included: true },
-          { text: "Fake/ duplicate orders detection (used otp number verified)", included: true },
-          { text: "One click courier upload system", included: true },
-          { text: "Return order management", included: true },
-          { text: "Stock management", included: true },
-          { text: "Sms marketing", included: true },
-          { text: "Bulk invoice/ sticker printing", included: false },
-          { text: "Product stock management", included: false },
-          { text: "Use it. Free for a month/ Monthly 500 orders free", included: false },
-          { text: "After a month you have to pay per parcel 1 taka only", included: false },
-          { text: "Chat option (messenger. whatsapp live chat)", included: false },
-      ],
-      buttonText: "Purchase Now",
-      link: "/checkout",
+    title: "Regular License",
+    price: "5000",
+    originalPrice: "7000",
+    features: [
+      { text: "Incomplete Order tracking", included: true },
+      { text: "customizable Landing pages", included: true },
+      { text: "Fake/ duplicate orders detection (used otp number verified)", included: true },
+      { text: "One click courier upload system", included: true },
+      { text: "Return order management", included: true },
+      { text: "Stock management", included: true },
+      { text: "Sms marketing", included: true },
+      { text: "Bulk invoice/ sticker printing", included: false },
+      { text: "Product stock management", included: false },
+      { text: "Use it. Free for a month/ Monthly 500 orders free", included: false },
+      { text: "After a month you have to pay per parcel 1 taka only", included: false },
+      { text: "Chat option (messenger. whatsapp live chat)", included: false },
+    ],
+    buttonText: "Purchase Now",
+    link: "/checkout",
   },
   {
-      title: "Extended License",
-      price: "8000",
-      features: [
-          { text: "Incomplete Order tracking", included: true },
-          { text: "customizable Landing pages", included: true },
-          { text: "Fake/ duplicate orders detection (used otp number verified)", included: true },
-          { text: "One click courier upload system", included: true },
-          { text: "Return order management", included: true },
-          { text: "Stock management", included: true },
-          { text: "Sms marketing", included: true },
-          { text: "Bulk invoice/ sticker printing", included: true },
-          { text: "Product stock management", included: true },
-          { text: "Use it. Free for a month/ Monthly 500 orders free", included: false },
-          { text: "After a month you have to pay per parcel 1 taka only", included: false },
-          { text: "Chat option (messenger. whatsapp live chat)", included: false },
-      ],
-      buttonText: "Purchase Now",
-      link: "/checkout"
+    title: "Extended License",
+    price: "8000",
+    features: [
+      { text: "Incomplete Order tracking", included: true },
+      { text: "customizable Landing pages", included: true },
+      { text: "Fake/ duplicate orders detection (used otp number verified)", included: true },
+      { text: "One click courier upload system", included: true },
+      { text: "Return order management", included: true },
+      { text: "Stock management", included: true },
+      { text: "Sms marketing", included: true },
+      { text: "Bulk invoice/ sticker printing", included: true },
+      { text: "Product stock management", included: true },
+      { text: "Use it. Free for a month/ Monthly 500 orders free", included: false },
+      { text: "After a month you have to pay per parcel 1 taka only", included: false },
+      { text: "Chat option (messenger. whatsapp live chat)", included: false },
+    ],
+    buttonText: "Purchase Now",
+    link: "/checkout"
   },
   {
-      title: "Bundle Pack",
-      price: "20000",
-      originalPrice: "18000",
-      badge: "Most Popular",
-      features: [
-          { text: "Incomplete Order tracking", included: true },
-          { text: "customizable Landing pages", included: true },
-          { text: "Fake/ duplicate orders detection (used otp number verified)", included: true },
-          { text: "One click courier upload system", included: true },
-          { text: "Return order management", included: true },
-          { text: "Stock management", included: true },
-          { text: "Sms marketing", included: true },
-          { text: "Bulk invoice/ sticker printing", included: true },
-          { text: "Product stock management", included: true },
-          { text: "Use it. Free for a month/ Monthly 500 orders free", included: true },
-          { text: "After a month you have to pay per parcel 1 taka only", included: true },
-          { text: "Chat option (messenger. whatsapp live chat)", included: true },
-      ],
-      buttonText: "Purchase Now",
-      link: "/checkout"
+    title: "Bundle Pack",
+    price: "20000",
+    originalPrice: "18000",
+    badge: "Most Popular",
+    features: [
+      { text: "Incomplete Order tracking", included: true },
+      { text: "customizable Landing pages", included: true },
+      { text: "Fake/ duplicate orders detection (used otp number verified)", included: true },
+      { text: "One click courier upload system", included: true },
+      { text: "Return order management", included: true },
+      { text: "Stock management", included: true },
+      { text: "Sms marketing", included: true },
+      { text: "Bulk invoice/ sticker printing", included: true },
+      { text: "Product stock management", included: true },
+      { text: "Use it. Free for a month/ Monthly 500 orders free", included: true },
+      { text: "After a month you have to pay per parcel 1 taka only", included: true },
+      { text: "Chat option (messenger. whatsapp live chat)", included: true },
+    ],
+    buttonText: "Purchase Now",
+    link: "/checkout"
   },
 ];
 
@@ -176,11 +179,23 @@ const landingPageImage = [
   },
 ];
 const HomePage = () => {
+
+  const {
+    data: homeSectionData,
+    error: errorHomeSectionData,
+    isLoading: loadingHomeSectionData
+  } = useSWR(
+    `${envConfig.apiUrl}home`,
+    fetcher
+  );
+  console.log("object", homeSectionData);
+
+
   return (
     <div>
       <MainTemplate>
         <div className=" bg-gradient-to-r from-black to-[rgb(26,26,81)]">
-          <HeroSection />
+          <HeroSection slider={homeSectionData?.data?.slider} />
           {/* <HeroSectionTwo /> */}
 
           {/* Service Section */}
