@@ -16,6 +16,7 @@ const SwiperSlider = ({
   slidesPerView = 1,
   className = "",
   fullscreen = false,
+  paginationBtn = true,
 }) => {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
@@ -63,7 +64,7 @@ const SwiperSlider = ({
           prevEl: navigationPrevRef.current,
           nextEl: navigationNextRef.current,
         }}
-        pagination={{ clickable: true }}
+        pagination={paginationBtn ? { clickable: true } : undefined}
         loop={true}
         autoplay={
           autoplay

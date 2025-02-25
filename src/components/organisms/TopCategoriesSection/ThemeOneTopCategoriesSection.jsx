@@ -19,15 +19,40 @@ const categories = [
         name: "Accessories",
         imageUrl: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=800&auto=format&fit=crop&q=80",
     },
+    {
+        id: 3,
+        name: "Accessories",
+        imageUrl: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=800&auto=format&fit=crop&q=80",
+    },
+    {
+        id: 3,
+        name: "Accessories",
+        imageUrl: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=800&auto=format&fit=crop&q=80",
+    },
+    {
+        id: 3,
+        name: "Accessories",
+        imageUrl: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=800&auto=format&fit=crop&q=80",
+    },
+    {
+        id: 3,
+        name: "Accessories",
+        imageUrl: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=800&auto=format&fit=crop&q=80",
+    },
+    {
+        id: 3,
+        name: "Accessories",
+        imageUrl: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=800&auto=format&fit=crop&q=80",
+    },
 ];
 
 const ThemeOneTopCategoriesSection = () => {
     return (
         <div>
             <Section heading="Top Categories">
-                <GridTemplate columns={3}>
+                <GridTemplate columns={4}>
                     {categories.map(category => (
-                        <div className="relative h-[400px] rounded-xl overflow-hidden group cursor-pointer">
+                        <div className="relative h-[250px] rounded-xl overflow-hidden group cursor-pointer">
                             <div className="absolute inset-0 w-full h-full">
                                 <img
                                     src={category?.imageUrl}

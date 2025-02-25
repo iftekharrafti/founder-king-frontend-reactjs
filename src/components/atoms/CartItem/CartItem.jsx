@@ -36,19 +36,19 @@ const CartItem = ({ item }) => {
                     onClick={onDecrease}
                     className="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full hover:bg-indigo-100 transition-colors duration-300"
                 >
-                    <FaMinus className="text-red-800" />
+                    <FaMinus className="text-theme-primary" />
                 </button>
-                <span className="w-8 text-center font-semibold">{quantity}</span>
+                <span className="w-8 text-center font-semibold ">{quantity}</span>
                 <button
                     onClick={onIncrease}
                     className="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full hover:bg-indigo-100 transition-colors duration-300"
                 >
-                    <FaPlus className="text-red-800" />
+                    <FaPlus className="text-theme-primary" />
                 </button>
             </div>
             <button
                 onClick={onClick}
-                className="text-gray-400 hover:text-red-500 transition-colors duration-300"
+                className="text-gray-400 hover:text-theme-primary-hover transition-colors duration-300"
             >
                 <FaTrash className="text-xl" />
             </button>

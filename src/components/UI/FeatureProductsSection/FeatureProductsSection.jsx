@@ -11,7 +11,7 @@ const FeatureProductsSection = ({ products, heading }) => {
             <div className="max-w-7xl mx-auto">
                 <Section heading={heading}>
                     {/* <GridTemplate columns={4} gap={6} className="mt-8"> */}
-                    <SwiperSlider lg={4} md={4} sm={2} icon={true} autoplay={true}>
+                    <SwiperSlider lg={4} md={4} sm={2} icon={true} autoplay={true} paginationBtn={false}>
                         {products.map((product, index) => (
                             <SwiperSlide key={index}>
                                 <ProductCard key={product.id} product={product} />

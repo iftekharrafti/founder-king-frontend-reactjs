@@ -5,9 +5,14 @@ import "./App.css";
 import { RouterProvider } from "react-router-dom";
 import router from "./routers";
 import { useColors } from "./context/colorContext";
+import { useGeneralSettings } from "./context/generalSettingsContext";
+import { HelmetProvider } from "react-helmet-async";
+import MetaTags from "./utils/MetaTags/MetaTags";
 
 function App() {
   const { updateGlobalColors } = useColors();
+
+  const { generalSettings, errorGeneralSettings, isLoadingGeneralSettings } = useGeneralSettings();
 
   useEffect(() => {
     const fetchGlobalColors = async () => {
@@ -25,7 +30,16 @@ function App() {
   }, []);
   return (
     <main className="">
-      <RouterProvider router={router} />
+      <HelmetProvider>
+        <MetaTags
+          title={generalSettings?.data?.name}
+          description={generalSettings?.data?.meta_description}
+          keywords={generalSettings?.data?.meta_keywords}
+          favicon={generalSettings?.data?.favicon}
+          image={generalSettings?.data?.logo}
+        />
+        <RouterProvider router={router} />
+      </HelmetProvider>
     </main>
   );
 }
