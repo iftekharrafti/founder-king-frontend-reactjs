@@ -15,6 +15,7 @@ import ThemeOne from "../components/Theme/ThemeOne/ThemeOne";
 import ThemeTwo from "../components/Theme/ThemeTwo/ThemeTwo";
 import AddtoCart from "../components/organisms/AddtoCart/AddtoCart";
 import Wishlist from "../components/organisms/Wishlist/Wishlist";
+import CheckoutPage from "../components/organisms/CheckoutPage/CheckoutPage";
 
 const router = createBrowserRouter([
   {
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
       {
         path: "/wishlist",
         element: <Wishlist />,
+      },
+      {
+        path: "/theme/1/checkout",
+        element: <CheckoutPage />,
       },
     ],
   },
