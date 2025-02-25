@@ -4,6 +4,10 @@ import ThemeTwoMainTemplate from "../../templates/ThemeTwoMainTemplate/ThemeTwoM
 import ThemeTwoHeroSection from "../../organisms/HeroSection/ThemeTwoHeroSection";
 import ThemeTwoProductCard from "../../organisms/ProductCard/ThemeTwoProductCard";
 import FeatureProductsSection from "../../UI/FeatureProductsSection/FeatureProductsSection";
+import Section from "../../templates/Section/Section";
+import TestimonialsSection from "../../organisms/TestimonialsSection/TestimonialsSection";
+import GridTemplate from "../../UI/GridTemplate/GridTemplate";
+import CategoryCard from "../../organisms/CategoryCard/CategoryCard";
 
 const ThemeTwo = () => {
   const { updateThemeColors } = useColors();
@@ -106,6 +110,58 @@ const ThemeTwo = () => {
         "https://img.freepik.com/premium-photo/vintage-style-chic-fashion-accessories-lady-set_161568-2367.jpg?ga=GA1.1.654311608.1722150614&semt=ais_hybrid",
     },
   ];
+
+  const categories = [
+    {
+      id: 1,
+      name: "Men's Fashion",
+      imageUrl:
+        "https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=800&auto=format&fit=crop&q=80",
+    },
+    {
+      id: 2,
+      name: "Women's Collection",
+      imageUrl:
+        "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&auto=format&fit=crop&q=80",
+    },
+    {
+      id: 3,
+      name: "Accessories",
+      imageUrl:
+        "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=800&auto=format&fit=crop&q=80",
+    },
+    {
+      id: 4,
+      name: "Footwear",
+      imageUrl:
+        "https://images.unsplash.com/photo-1520975916090-3105956dac38?w=800&auto=format&fit=crop&q=80",
+    },
+    {
+      id: 5,
+      name: "Beauty & Skincare",
+      imageUrl:
+        "https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&auto=format&fit=crop&q=80",
+    },
+    {
+      id: 6,
+      name: "Sportswear",
+      imageUrl:
+        "https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?w=800&auto=format&fit=crop&q=80",
+    },
+    {
+      id: 7,
+      name: "Watches",
+      imageUrl:
+        "https://images.unsplash.com/photo-1513258496099-48168024aec0?w=800&auto=format&fit=crop&q=80",
+    },
+    {
+      id: 8,
+      name: "Bags & Luggage",
+      imageUrl:
+        "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=800&auto=format&fit=crop&q=80",
+    },
+  ];
+
   return (
     <div>
       <ThemeTwoMainTemplate>
@@ -115,12 +171,22 @@ const ThemeTwo = () => {
           heading="Featured Products"
           ProductCardComponent={ThemeTwoProductCard}
         />
-
+        <Section heading="Top Categories">
+          <GridTemplate columns={4}>
+            {categories.map((category, index) => (
+              <CategoryCard key={index} category={category} />
+            ))}
+          </GridTemplate>
+        </Section>
         <FeatureProductsSection
           products={products}
           heading="New Arrivals"
           ProductCardComponent={ThemeTwoProductCard}
         />
+
+        <Section heading={"OUR HAPPY CLIENTS"} className={"bg-white"}>
+          <TestimonialsSection />
+        </Section>
       </ThemeTwoMainTemplate>
     </div>
   );

@@ -18,6 +18,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      perspective: {
+        1000: "1000px",
+      },
+      rotate: {
+        "x-12": "12deg",
+      },
+      transformStyle: {
+        "preserve-3d": "preserve-3d",
+      },
       animation: {
         float: "float 3s ease-in-out infinite",
       },
@@ -68,5 +77,19 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        ".perspective-1000": {
+          perspective: "1000px",
+        },
+        ".preserve-3d": {
+          "transform-style": "preserve-3d",
+        },
+        ".rotate-x-12": {
+          transform: "rotateX(12deg)",
+        },
+      });
+    },
+  ],
 };
