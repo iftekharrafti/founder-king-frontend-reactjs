@@ -10,6 +10,7 @@ import ThemeOneProductCategory from '../../organisms/ThemeOneProductCategory/The
 import ThemeOneHeroSection from '../../organisms/HeroSection/ThemeOneHeroSection';
 import ThemeThreeMainTemplate from '../../templates/ThemeThreeMainTemplate/ThemeThreeMainTemplate';
 import ThemeThreeProductCategory from '../../organisms/ThemeThreeProductCategory/ThemeThreeProductCategory';
+import ThemeThreeProductCard from '../../atoms/ThemeThreeProductCard/ThemeThreeProductCard';
 
 const ThemeThree = () => {
     const products = [
@@ -107,8 +108,15 @@ const ThemeThree = () => {
             <ThemeThreeMainTemplate>
                 <ThemeOneHeroSection slides={heroSlides} />
                 <ThemeThreeProductCategory />
-                <FeatureProductsSection products={products} heading="Featured Products" />
-                <FeatureProductsSection products={products} heading="New Arrivals" />
+                <FeatureProductsSection
+                    products={products}
+                    heading="Featured Products"
+                    ProductCardComponent={ThemeThreeProductCard}
+                />
+                <FeatureProductsSection
+                    products={products}
+                    heading="New Arrivals"
+                    ProductCardComponent={ThemeThreeProductCard} />
                 <ThemeOneBannerContentSection />
                 <Section
                     heading={"OUR HAPPY CLIENTS"}
