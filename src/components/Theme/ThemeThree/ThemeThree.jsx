@@ -9,6 +9,7 @@ import { useColors } from '../../../context/colorContext';
 import ThemeOneProductCategory from '../../organisms/ThemeOneProductCategory/ThemeOneProductCategory';
 import ThemeOneHeroSection from '../../organisms/HeroSection/ThemeOneHeroSection';
 import ThemeThreeMainTemplate from '../../templates/ThemeThreeMainTemplate/ThemeThreeMainTemplate';
+import ThemeThreeProductCategory from '../../organisms/ThemeThreeProductCategory/ThemeThreeProductCategory';
 
 const ThemeThree = () => {
     const products = [
@@ -105,9 +106,8 @@ const ThemeThree = () => {
         <div>
             <ThemeThreeMainTemplate>
                 <ThemeOneHeroSection slides={heroSlides} />
-                <ProductCategory />
+                <ThemeThreeProductCategory />
                 <FeatureProductsSection products={products} heading="Featured Products" />
-                <ThemeOneProductCategory />
                 <FeatureProductsSection products={products} heading="New Arrivals" />
                 <ThemeOneBannerContentSection />
                 <Section
