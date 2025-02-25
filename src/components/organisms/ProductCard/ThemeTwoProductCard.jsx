@@ -16,7 +16,7 @@ const ThemeTwoProductCard = ({ product }) => {
   } = product;
 
   return (
-    <div className="group relative w-full max-w-sm overflow-hidden rounded-2xl bg-white shadow-lg transition-all duration-300 hover:shadow-2xl">
+    <div className="group relative w-full m-2 max-w-sm overflow-hidden rounded-2xl bg-white shadow-lg transition-all duration-300 hover:shadow-2xl">
       {/* Discount Tag */}
       {mainPrice !== discountedPrice && (
         <div className="absolute left-0 top-4 z-10">
@@ -56,10 +56,10 @@ const ThemeTwoProductCard = ({ product }) => {
       <div className="space-y-3 bg-white p-6">
         <div className="flex items-center justify-between">
           <h3 className="text-lg font-bold text-gray-800">{name}</h3>
-          <Rating rating={rating} />
         </div>
 
         <PriceTagTwo mainPrice={mainPrice} discountedPrice={discountedPrice} />
+        <Rating rating={rating} />
 
         {/* Action Buttons */}
         {/* <div className="flex gap-2 pt-2">
