@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import ThemeOneMainTemplate from '../../templates/ThemeOneMainTemplate/ThemeOneMainTemplate';
 import ThemeOneBannerContentSection from '../../organisms/ThemeOneHeroSection/ThemeOneHeroSection';
+import ProductCategory from '../../organisms/ThemeOneProductCategory/ThemeOneProductCategory';
 import FeatureProductsSection from '../../UI/FeatureProductsSection/FeatureProductsSection';
 import Section from '../../templates/Section/Section';
 import TestimonialsSection from '../../organisms/TestimonialsSection/TestimonialsSection';
 import { useColors } from '../../../context/colorContext';
-import ThemeOneProductCategory from '../../organisms/ThemeOneProductCategory/ThemeOneProductCategory';
+import ThemeOneTopCategoriesSection from '../../organisms/TopCategoriesSection/ThemeOneTopCategoriesSection';
 import ThemeOneHeroSection from '../../organisms/HeroSection/ThemeOneHeroSection';
-import ProductCategory from '../../organisms/ProductCategory/ProductCategory';
 
 const ThemeOne = () => {
     const products = [
@@ -104,11 +104,11 @@ const ThemeOne = () => {
         <div>
             <ThemeOneMainTemplate>
                 <ThemeOneHeroSection slides={heroSlides} />
-                {/* <ProductCategory /> */}
-                <ThemeOneProductCategory />
+                <ProductCategory />
                 <FeatureProductsSection products={products} heading="Featured Products" />
+                <ThemeOneTopCategoriesSection />
                 <FeatureProductsSection products={products} heading="New Arrivals" />
-                {/* <ThemeOneBannerContentSection /> */}
+                <ThemeOneBannerContentSection />
                 <Section
                     heading={"OUR HAPPY CLIENTS"}
                     className={"bg-white"}

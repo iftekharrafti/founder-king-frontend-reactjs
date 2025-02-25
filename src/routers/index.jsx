@@ -16,6 +16,7 @@ import ThemeTwo from "../components/Theme/ThemeTwo/ThemeTwo";
 import AddtoCart from "../components/organisms/AddtoCart/AddtoCart";
 import Wishlist from "../components/organisms/Wishlist/Wishlist";
 import CheckoutPage from "../components/organisms/CheckoutPage/CheckoutPage";
+import ThemeThree from "../components/Theme/ThemeThree/ThemeThree";
 
 const router = createBrowserRouter([
   {
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
       {
         path: "/theme/2",
         children: [{ path: "", element: <ThemeTwo /> }],
+      },
+      {
+        path: "/theme/3",
+        element: <ThemeThree />,
       },
       {
         path: "/add-to-cart",

@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import ThemeOneMainTemplate from '../../templates/ThemeOneMainTemplate/ThemeOneMainTemplate';
 import ThemeOneBannerContentSection from '../../organisms/ThemeOneHeroSection/ThemeOneHeroSection';
-import ThemeOneProductCategory from '../../organisms/ThemeOneProductCategory/ThemeOneProductCategory';
+import ProductCategory from '../../organisms/ProductCategory/ProductCategory';
 import FeatureProductsSection from '../../UI/FeatureProductsSection/FeatureProductsSection';
 import Section from '../../templates/Section/Section';
 import TestimonialsSection from '../../organisms/TestimonialsSection/TestimonialsSection';
 import { useColors } from '../../../context/colorContext';
-import ThemeOneTopCategoriesSection from '../../organisms/TopCategoriesSection/ThemeOneTopCategoriesSection';
+import ThemeOneProductCategory from '../../organisms/ThemeOneProductCategory/ThemeOneProductCategory';
 import ThemeOneHeroSection from '../../organisms/HeroSection/ThemeOneHeroSection';
+import ThemeThreeMainTemplate from '../../templates/ThemeThreeMainTemplate/ThemeThreeMainTemplate';
 
 const ThemeThree = () => {
     const products = [
@@ -102,11 +103,11 @@ const ThemeThree = () => {
     }, []);
     return (
         <div>
-            <ThemeOneMainTemplate>
+            <ThemeThreeMainTemplate>
                 <ThemeOneHeroSection slides={heroSlides} />
-                <ThemeOneProductCategory />
+                <ProductCategory />
                 <FeatureProductsSection products={products} heading="Featured Products" />
-                <ThemeOneTopCategoriesSection />
+                <ThemeOneProductCategory />
                 <FeatureProductsSection products={products} heading="New Arrivals" />
                 <ThemeOneBannerContentSection />
                 <Section
@@ -115,7 +116,7 @@ const ThemeThree = () => {
                 >
                     <TestimonialsSection />
                 </Section>
-            </ThemeOneMainTemplate>
+            </ThemeThreeMainTemplate>
         </div>
     );
 };

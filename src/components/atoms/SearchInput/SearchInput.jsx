@@ -3,7 +3,7 @@ import { FaSearch } from 'react-icons/fa';
 
 const SearchInput = ({ placeholder = "Search for products" }) => {
   return (
-    <div className="relative flex-grow max-w-3xl mx-4 hidden md:block">
+    <div className="relative flex-grow max-w-sm mx-4 hidden md:block">
       <input
         type="text"
         placeholder={placeholder}

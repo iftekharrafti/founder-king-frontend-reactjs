@@ -1,10 +1,10 @@
 import Footer from "@/components/organisms/Footer/Footer";
 import React from "react";
-import ThemeOneNavbar from "../../organisms/Navbar/ThemeOneNavbar";
-const ThemeOneMainTemplate = ({ children }) => {
+import ThemeThreeNavbar from "../../organisms/Navbar/ThemeThreeNavbar";
+const ThemeThreeMainTemplate = ({ children }) => {
   return (
     <div>
-      <ThemeOneNavbar />
+      <ThemeThreeNavbar />
       <div className="">
         {children}
       </div>
@@ -13,4 +13,4 @@ const ThemeOneMainTemplate = ({ children }) => {
   );
 };
 
-export default ThemeOneMainTemplate;
+export default ThemeThreeMainTemplate;
