@@ -191,23 +191,23 @@ const HomePage = () => {
             <Newsletter />
 
             {/* Stats Section */}
-            <Section
+            {/* <Section
               heading={"Our Impact in Figures"}
               className={"bg-gray-100"}
             >
               <StatsSection />
-            </Section>
+            </Section> */}
             {/* Service Section */}
-            <Section heading={"TESTIMONIALS"} className={"bg-white"}>
+            {/* <Section heading={"TESTIMONIALS"} className={"bg-white"}>
               <TestimonialsSection />
-            </Section>
+            </Section> */}
             {/* Faq Section */}
-            <Section
+            {/* <Section
               heading={"Frequently Asked Questions"}
               className={"bg-gray-100"}
             >
               <FaqSection />
-            </Section>
+            </Section> */}
           </div>
         </HelmetProvider>
       </MainTemplate>
