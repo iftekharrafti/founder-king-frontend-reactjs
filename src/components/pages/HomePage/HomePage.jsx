@@ -16,6 +16,8 @@ import envConfig from "../../../../envconfig";
 import { HelmetProvider } from "react-helmet-async";
 import MetaTags from "../../../utils/MetaTags/MetaTags";
 import { useGeneralSettings } from "../../../context/generalSettingsContext";
+import FounderTestimonial from "../../organisms/FounderTestimonial/FounderTestimonial";
+import Newsletter from "../../organisms/Newsletter/Newsletter";
 import PricingSectionTwo from "../../organisms/PricingSection/PricingSectionTwo";
 
 // Service Data
@@ -189,9 +191,14 @@ const HomePage = () => {
             favicon={generalSettings?.data?.favicon}
             image={generalSettings?.data?.logo}
           />
-          <div className=" bg-gradient-to-r from-black to-[rgb(26,26,81)]">
-            <HeroSection slider={homeSectionData?.data?.slider} />
+          <div>
+            <div className="bg-global-primary">
+              <HeroSection slider={homeSectionData?.data?.slider} />
+            </div>
             {/* <HeroSectionTwo /> */}
+
+            <FounderTestimonial />
+            <Newsletter />
 
             {/* Service Section */}
             <Section
