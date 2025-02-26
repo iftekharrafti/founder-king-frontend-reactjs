@@ -57,9 +57,11 @@ const FounderTestimonial = () => {
     return (
         <section className="py-16 px-4 bg-gradient-to-br from-orange-50 to-purple-50">
             <div className="max-w-7xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-bold text-center text-orange-500 mb-4">
+                <div className="flex justify-center items-center">
+                <h2 className="text-4xl md:text-5xl font-bold text-center text-orange-500 mb-4 border-2 border-global-primary inline-block px-4 py-2 rounded-3xl">
                     What Founders are saying
                 </h2>
+                </div>
                 <div className="mt-12">
                     <GridTemplate columns={3} className="md:gap-8 gap-4">
                         {testimonials.map((testimonial, index) => (
