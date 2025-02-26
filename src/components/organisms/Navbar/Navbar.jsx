@@ -110,8 +110,8 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="md:hidden w-full">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 mt-[95px] bg-white w-full">
             {navItems.map((item) => (
               <Link
                 to={item.link}
