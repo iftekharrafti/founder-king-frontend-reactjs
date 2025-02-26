@@ -17,6 +17,7 @@ import { HelmetProvider } from "react-helmet-async";
 import MetaTags from "../../../utils/MetaTags/MetaTags";
 import { useGeneralSettings } from "../../../context/generalSettingsContext";
 import FounderTestimonial from "../../organisms/FounderTestimonial/FounderTestimonial";
+import Newsletter from "../../organisms/Newsletter/Newsletter";
 
 // Service Data
 const services = [
@@ -216,6 +217,7 @@ const HomePage = () => {
             {/* <HeroSectionTwo /> */}
 
             <FounderTestimonial />
+            <Newsletter />
 
             {/* Service Section */}
             <Section

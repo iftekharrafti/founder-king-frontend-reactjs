@@ -3,6 +3,8 @@ import { RxCross2 } from "react-icons/rx";
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useGeneralSettings } from "../../../context/generalSettingsContext";
+import SecondaryButton from "../../atoms/Buttons/SecondaryButton";
+import PrimaryButton from "../../atoms/Buttons/PrimaryButton";
 
 const Navbar = () => {
   const location = useLocation();
@@ -67,11 +69,10 @@ const Navbar = () => {
                   to={item.link}
                   key={item.name}
                   onClick={() => setActiveNav(item.name)}
-                  className={`px-3 py-1 text-xl font-medium transition-colors duration-200 rounded bg-opacity-80 ${
-                    activeNav === item.name
+                  className={`px-3 py-1 text-xl font-medium transition-colors duration-200 rounded bg-opacity-80 ${activeNav === item.name
                       ? "text-white hover:text-white bg-global-primary font-semibold"
                       : "text-gray-600 hover:text-white hover:bg-global-primary-hover "
-                  }`}
+                    }`}
                 >
                   {item.name}
                 </Link>
@@ -119,11 +120,10 @@ const Navbar = () => {
                   setActiveNav(item.name);
                   setIsOpen(false);
                 }}
-                className={`block px-3 py-2 text-base font-medium w-full text-left ${
-                  activeNav === item.name
+                className={`block px-3 py-2 text-base font-medium w-full text-left ${activeNav === item.name
                     ? "text-global-primary"
                     : "text-gray-600 hover:text-global-primary-hover"
-                }`}
+                  }`}
               >
                 {item.name}
               </Link>
