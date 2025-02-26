@@ -7,12 +7,14 @@ const FaqPage = () => {
     return (
         <div>
             <MainTemplate>
-                <Section
-                    heading={"Frequently Asked Questions"}
-                    className={"bg-gray-100"}
-                >
-                    <FaqSection />
-                </Section>
+                <div className="mt-[80px]">
+                    <Section
+                        heading={"Frequently Asked Questions"}
+                        className={"bg-gray-100"}
+                    >
+                        <FaqSection />
+                    </Section>
+                </div>
             </MainTemplate>
         </div>
     );

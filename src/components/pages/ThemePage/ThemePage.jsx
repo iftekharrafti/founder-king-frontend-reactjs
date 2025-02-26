@@ -63,15 +63,17 @@ const ThemePage = () => {
         <div>
             <MainTemplate>
                 {/* Landing Page Section */}
-                <Section
-                    heading={"20+ Done Landing Pages For You"}
-                    className={"bg-white"}
-                    subHeading={
-                        "Our “Done For You Templates” will allow you to start creating your pages in just minutes. We have used our best sales, marketing & conversion hacks on these pages to make them convert more. Just drag & drop your own content, add your branding and you are done."
-                    }
-                >
-                    <LandingPageSection data={landingPageImage} />
-                </Section>
+                <div className="mt-[80px]">
+                    <Section
+                        heading={"20+ Done Landing Pages For You"}
+                        className={"bg-white"}
+                        subHeading={
+                            "Our “Done For You Templates” will allow you to start creating your pages in just minutes. We have used our best sales, marketing & conversion hacks on these pages to make them convert more. Just drag & drop your own content, add your branding and you are done."
+                        }
+                    >
+                        <LandingPageSection data={landingPageImage} />
+                    </Section>
+                </div>
             </MainTemplate>
         </div>
     );

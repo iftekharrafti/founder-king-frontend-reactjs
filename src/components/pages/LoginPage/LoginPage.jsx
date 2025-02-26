@@ -8,7 +8,7 @@ const LoginPage = () => {
     <MainTemplate>
       <div
         className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-purple-50 
-    flex items-center justify-center p-4"
+    flex items-center justify-center p-4 mt-[80px]"
       >
         <div
           className="w-full max-w-lg bg-white rounded-2xl shadow-xl p-8 

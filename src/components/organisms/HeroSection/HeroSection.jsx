@@ -7,8 +7,8 @@ import SecondaryButton from "../../atoms/Buttons/SecondaryButton";
 
 const HeroSection = ({ slider }) => {
   return (
-    <section className={`bg-primary text-white py-20 px-4 sm:px-6 lg:px-8`}>
-      <div className="max-w-7xl mx-auto">
+    <section className={`bg-global-primary text-white py-20 px-4 sm:px-6 lg:px-8`}>
+      <div className="max-w-7xl mx-auto mt-[80px]">
         <GridTemplate columns={2} className="items-center">
           <div className="space-y-8 animate-float">
             <Heading

@@ -7,7 +7,7 @@ import Section from '../../templates/Section/Section';
 const ContactUs = () => {
     return (
         <MainTemplate>
-            <div className="min-h-screen bg-gradient-to-br from-teal-50 via-emerald-50 to-cyan-50">
+            <div className="min-h-screen bg-gradient-to-br from-teal-50 via-emerald-50 to-cyan-50 mt-[80px]">
                 {/* Hero Section */}
                 <section className="relative py-20 px-4 bg-gradient-to-r from-primary to-primary_hover">
                     <div className="max-w-7xl mx-auto text-center text-white">

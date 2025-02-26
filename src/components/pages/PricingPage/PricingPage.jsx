@@ -73,12 +73,14 @@ const PricingPage = () => {
         <div>
             <MainTemplate>
                 {/* Pricing Section */}
+                <div  className="mt-[80px]">
                 <Section
                     heading={"Affordable Pricing Based On Your Needs"}
                     className={"bg-gray-100"}
                 >
                     <PricingSection pricingData={pricingData} />
                 </Section>
+                </div>
             </MainTemplate>
         </div>
     );

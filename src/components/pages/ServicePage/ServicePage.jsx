@@ -51,15 +51,17 @@ const ServicePage = () => {
     return (
         <div>
             <MainTemplate>
-                <Section
-                    heading={"Our Services"}
-                    subHeading={
-                        "Discover our comprehensive range of solutions designed to help your business thrive in the digital age"
-                    }
-                    className={"bg-gray-100"}
-                >
-                    <ServicesSection data={services} />
-                </Section>
+                <div className="mt-[80px]">
+                    <Section
+                        heading={"Our Services"}
+                        subHeading={
+                            "Discover our comprehensive range of solutions designed to help your business thrive in the digital age"
+                        }
+                        className={"bg-gray-100"}
+                    >
+                        <ServicesSection data={services} />
+                    </Section>
+                </div>
             </MainTemplate>
         </div>
     );

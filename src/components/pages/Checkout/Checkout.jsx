@@ -22,7 +22,7 @@ const Checkout = () => {
     };
     return (
         <MainTemplate>
-            <div className="min-h-screen bg-gray-50 py-12 px-4">
+            <div className="min-h-screen bg-gray-50 py-12 px-4 mt-[80px]">
                 <div className="max-w-xl mx-auto">
                     {/* Checkout Card */}
                     <div className="bg-white rounded-2xl shadow-xl overflow-hidden">

@@ -9,7 +9,7 @@ const AboutUs = () => {
     return (
         <div>
             <MainTemplate>
-                <div className="min-h-screen bg-white">
+                <div className="min-h-screen bg-white mt-[80px]">
                     {/* Hero Section */}
                     <section className="relative py-20 px-4 bg-gradient-to-r from-indigo-500 to-purple-600">
                         <div className="max-w-7xl mx-auto text-center text-white">

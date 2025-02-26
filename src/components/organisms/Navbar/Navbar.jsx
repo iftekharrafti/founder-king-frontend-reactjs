@@ -47,8 +47,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full bg-white shadow-sm sticky z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="w-full mx-auto !bg-global-primary shadow-sm sticky z-50 flex flex-col justify-center items-center">
+      <div className="max-w-7xl bg-white   px-4 sm:px-6 lg:px-8 mt-[25px] rounded-[30px] fixed top-2 w-full shadow-xl border-b-2 border-global-primary">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
