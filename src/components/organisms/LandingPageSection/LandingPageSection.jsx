@@ -48,7 +48,7 @@ function LandingPageSection({ data }) {
                     className="h-48 w-full object-cover md:h-full"
                   />
                 </div>
-                <div className="md:w-2/3 p-6 md:p-8">
+                <div className="md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
                   <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                     {solution.title}
                   </h2>
