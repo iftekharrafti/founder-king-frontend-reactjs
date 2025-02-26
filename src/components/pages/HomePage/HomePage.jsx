@@ -16,6 +16,7 @@ import envConfig from "../../../../envconfig";
 import { HelmetProvider } from "react-helmet-async";
 import MetaTags from "../../../utils/MetaTags/MetaTags";
 import { useGeneralSettings } from "../../../context/generalSettingsContext";
+import CTASection from "../../organisms/CTASection/CTASection";
 
 // Service Data
 const services = [
@@ -208,9 +209,13 @@ const HomePage = () => {
             favicon={generalSettings?.data?.favicon}
             image={generalSettings?.data?.logo}
           />
-          <div className=" bg-gradient-to-r from-black to-[rgb(26,26,81)]">
-            <HeroSection slider={homeSectionData?.data?.slider} />
+          <div>
+            <div className="bg-global-primary">
+              <HeroSection slider={homeSectionData?.data?.slider} />
+            </div>
             {/* <HeroSectionTwo /> */}
+
+            <CTASection />
 
             {/* Service Section */}
             <Section
