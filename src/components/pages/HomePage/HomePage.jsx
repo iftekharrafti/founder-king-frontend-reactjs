@@ -25,35 +25,35 @@ const services = [
   {
     imageUrl:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&auto=format",
-    title: "Incomplete Order tracking",
+    title: "Customizable Landing pages",
     description:
       "Creating modern, responsive websites using the latest technologies and best practices for optimal user experience.",
   },
   {
     imageUrl:
       "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?w=500&auto=format",
-    title: "customizable Landing pages",
+    title: "Ecommerce Website",
     description:
       "Developing native and cross-platform mobile applications that deliver seamless experiences across all devices.",
   },
   {
     imageUrl:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format",
-    title: "One click courier upload system",
+    title: "ABD Hosting",
     description:
       "Crafting intuitive and beautiful user interfaces that enhance user engagement and satisfaction.",
   },
   {
     imageUrl:
       "https://images.unsplash.com/photo-1551434678-e076c223a692?w=500&auto=format",
-    title: "Return order management",
+    title: "SMS Marketing",
     description:
       "Implementing scalable cloud infrastructure and services to power your digital transformation journey.",
   },
   {
     imageUrl:
       "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=500&auto=format",
-    title: "Stock management",
+    title: "Video Content",
     description:
       "Transforming raw data into actionable insights through advanced analytics and visualization.",
   },
@@ -116,56 +116,27 @@ const pricingData = [
   },
 ];
 
-const landingPageImage = [
+const solutions = [
   {
     id: 1,
-    url: "/images/landingPage/1.png",
-    title: "Urban Fitness",
+    title: "Analytics Data Warehouse Solution",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+    image: "https://placehold.co/300x200",
   },
   {
     id: 2,
-    url: "/images/landingPage/2.png",
-    title: "Yoga Practice",
+    title: "Application Data Processing Solution",
+    description:
+      "Duis at tellus at libero consequat sagittis et sit urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    image: "https://placehold.co/300x200",
   },
   {
     id: 3,
-    url: "/images/landingPage/3.png",
-    title: "CrossFit Training",
-  },
-  {
-    id: 4,
-    url: "/images/landingPage/4.png",
-    title: "Boxing",
-  },
-  {
-    id: 5,
-    url: "/images/landingPage/5.png",
-    title: "Weight Training",
-  },
-  {
-    id: 6,
-    url: "/images/landingPage/6.png",
-    title: "Cardio Workout",
-  },
-  {
-    id: 7,
-    url: "/images/landingPage/7.png",
-    title: "Martial Arts",
-  },
-  {
-    id: 8,
-    url: "/images/landingPage/8.png",
-    title: "Pilates",
-  },
-  {
-    id: 9,
-    url: "/images/landingPage/9.png",
-    title: "Strength Training",
-  },
-  {
-    id: 10,
-    url: "/images/landingPage/10.png",
-    title: "Functional Fitness",
+    title: "Leads Performance Vectorization",
+    description:
+      "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae. Maecenas eutellus sapien eu arcu convallis, vitae vestibulum ipsum maximus.",
+    image: "https://placehold.co/300x200",
   },
 ];
 const HomePage = () => {
@@ -196,44 +167,28 @@ const HomePage = () => {
               <HeroSection slider={homeSectionData?.data?.slider} />
             </div>
             {/* <HeroSectionTwo /> */}
+            {/* Pricing Section */}
 
-            <FounderTestimonial />
-            <Newsletter />
+            <PricingSectionTwo data={pricingData} />
+
+            {/* Service Section */}
+            <ServicesSection data={services} />
+
+            {/* Landing Page Section */}
+
+            <LandingPageSection data={solutions} />
 
             {/* Service Section */}
             <Section
-              heading={"Our Services"}
-              subHeading={
-                "Discover our comprehensive range of solutions designed to help your business thrive in the digital age"
-              }
-              className={"bg-gray-100"}
+              heading={"Our Happy Clients"}
+              className={"bg-global-primary pb-12"}
             >
-              <ServicesSection data={services} />
-            </Section>
-            {/* Service Section */}
-            <Section heading={"Our Happy Clients"} className={"bg-white pb-12"}>
               <HappyCustomer />
             </Section>
 
-            {/* Pricing Section */}
-            {/* <Section
-              heading={"Affordable Pricing Based On Your Needs"}
-              className={"bg-gray-100"}
-            >
-              <PricingSection pricingData={pricingData} />
-            </Section> */}
-            <PricingSectionTwo data={pricingData} />
-
-            {/* Landing Page Section */}
-            <Section
-              heading={"20+ Done Landing Pages For You"}
-              className={"bg-white"}
-              subHeading={
-                "Our “Done For You Templates” will allow you to start creating your pages in just minutes. We have used our best sales, marketing & conversion hacks on these pages to make them convert more. Just drag & drop your own content, add your branding and you are done."
-              }
-            >
-              <LandingPageSection data={landingPageImage} />
-            </Section>
+            {/* Testimonial Section */}
+            <FounderTestimonial />
+            <Newsletter />
 
             {/* Stats Section */}
             <Section
