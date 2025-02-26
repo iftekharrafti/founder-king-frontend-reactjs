@@ -18,6 +18,7 @@ import MetaTags from "../../../utils/MetaTags/MetaTags";
 import { useGeneralSettings } from "../../../context/generalSettingsContext";
 import FounderTestimonial from "../../organisms/FounderTestimonial/FounderTestimonial";
 import Newsletter from "../../organisms/Newsletter/Newsletter";
+import PricingSectionTwo from "../../organisms/PricingSection/PricingSectionTwo";
 
 // Service Data
 const services = [
@@ -67,67 +68,51 @@ const services = [
 // Pricing Data
 const pricingData = [
   {
-    title: "Regular License",
-    price: "5000",
-    originalPrice: "7000",
+    name: "Starter",
+    price: "$10/Month",
+    color: "bg-violet-500",
     features: [
-      { text: "Incomplete Order tracking", included: true },
-      { text: "customizable Landing pages", included: true },
-      { text: "Fake/ duplicate orders detection (used otp number verified)", included: true },
-      { text: "One click courier upload system", included: true },
-      { text: "Return order management", included: true },
-      { text: "Stock management", included: true },
-      { text: "Sms marketing", included: true },
-      { text: "Bulk invoice/ sticker printing", included: false },
-      { text: "Product stock management", included: false },
-      { text: "Use it. Free for a month/ Monthly 500 orders free", included: false },
-      { text: "After a month you have to pay per parcel 1 taka only", included: false },
-      { text: "Chat option (messenger. whatsapp live chat)", included: false },
+      "Incomplete Order tracking",
+      "Customizable Landing pages",
+      "One click course upload system",
     ],
-    buttonText: "Purchase Now",
-    link: "/checkout",
   },
   {
-    title: "Extended License",
-    price: "8000",
+    name: "Growth",
+    price: "$100/Month",
+    color: "bg-blue-600",
     features: [
-      { text: "Incomplete Order tracking", included: true },
-      { text: "customizable Landing pages", included: true },
-      { text: "Fake/ duplicate orders detection (used otp number verified)", included: true },
-      { text: "One click courier upload system", included: true },
-      { text: "Return order management", included: true },
-      { text: "Stock management", included: true },
-      { text: "Sms marketing", included: true },
-      { text: "Bulk invoice/ sticker printing", included: true },
-      { text: "Product stock management", included: true },
-      { text: "Use it. Free for a month/ Monthly 500 orders free", included: false },
-      { text: "After a month you have to pay per parcel 1 taka only", included: false },
-      { text: "Chat option (messenger. whatsapp live chat)", included: false },
+      "Incomplete Order tracking",
+      "Customizable Landing pages",
+      "One click course upload system",
+      "One click course upload system",
     ],
-    buttonText: "Purchase Now",
-    link: "/checkout"
   },
   {
-    title: "Bundle Pack",
-    price: "20000",
-    originalPrice: "18000",
-    badge: "Most Popular",
+    name: "Premium",
+    price: "$200/Month",
+    color: "bg-orange-400",
+    isPopular: true,
     features: [
-      { text: "Incomplete Order tracking", included: true },
-      { text: "customizable Landing pages", included: true },
-      { text: "Fake/ duplicate orders detection (used otp number verified)", included: true },
-      { text: "One click courier upload system", included: true },
-      { text: "Return order management", included: true },
-      { text: "Stock management", included: true },
-      { text: "Sms marketing", included: true },
-      { text: "Bulk invoice/ sticker printing", included: true },
-      { text: "Product stock management", included: true },
-      { text: "Use it. Free for a month/ Monthly 500 orders free", included: true },
-      { text: "After a month you have to pay per parcel 1 taka only", included: true },
-      { text: "Chat option (messenger. whatsapp live chat)", included: true },
+      "Incomplete Order tracking",
+      "Customizable Landing pages",
+      "One click course upload system",
+      "One click course upload system",
+      "One click course upload system",
     ],
-    buttonText: "Purchase Now",
-    link: "/checkout"
+  },
+  {
+    name: "Enterprise",
+    price: "Contact us",
+    color: "bg-orange-500",
+    features: [
+      "Incomplete Order tracking",
+      "Customizable Landing pages",
+      "One click course upload system",
+      "One click course upload system",
+      "One click course upload system",
+      "One click course upload system",
+    ],
   },
 ];
 
@@ -184,20 +169,16 @@ const landingPageImage = [
   },
 ];
 const HomePage = () => {
-
-  const { generalSettings, errorGeneralSettings, isLoadingGeneralSettings } = useGeneralSettings();
+  const { generalSettings, errorGeneralSettings, isLoadingGeneralSettings } =
+    useGeneralSettings();
 
   const {
     data: homeSectionData,
     error: errorHomeSectionData,
-    isLoading: loadingHomeSectionData
-  } = useSWR(
-    `${envConfig.apiUrl}home`,
-    fetcher
-  );
+    isLoading: loadingHomeSectionData,
+  } = useSWR(`${envConfig.apiUrl}home`, fetcher);
 
   console.log("object", generalSettings);
-
 
   return (
     <div>
@@ -230,20 +211,18 @@ const HomePage = () => {
               <ServicesSection data={services} />
             </Section>
             {/* Service Section */}
-            <Section
-              heading={"Our Happy Clients"}
-              className={"bg-white pb-12"}
-            >
+            <Section heading={"Our Happy Clients"} className={"bg-white pb-12"}>
               <HappyCustomer />
             </Section>
 
             {/* Pricing Section */}
-            <Section
+            {/* <Section
               heading={"Affordable Pricing Based On Your Needs"}
               className={"bg-gray-100"}
             >
               <PricingSection pricingData={pricingData} />
-            </Section>
+            </Section> */}
+            <PricingSectionTwo data={pricingData} />
 
             {/* Landing Page Section */}
             <Section
@@ -264,10 +243,7 @@ const HomePage = () => {
               <StatsSection />
             </Section>
             {/* Service Section */}
-            <Section
-              heading={"TESTIMONIALS"}
-              className={"bg-white"}
-            >
+            <Section heading={"TESTIMONIALS"} className={"bg-white"}>
               <TestimonialsSection />
             </Section>
             {/* Faq Section */}
