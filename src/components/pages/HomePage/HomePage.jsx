@@ -16,7 +16,7 @@ import envConfig from "../../../../envconfig";
 import { HelmetProvider } from "react-helmet-async";
 import MetaTags from "../../../utils/MetaTags/MetaTags";
 import { useGeneralSettings } from "../../../context/generalSettingsContext";
-import CTASection from "../../organisms/CTASection/CTASection";
+import FounderTestimonial from "../../organisms/FounderTestimonial/FounderTestimonial";
 
 // Service Data
 const services = [
@@ -215,7 +215,7 @@ const HomePage = () => {
             </div>
             {/* <HeroSectionTwo /> */}
 
-            <CTASection />
+            <FounderTestimonial />
 
             {/* Service Section */}
             <Section
