@@ -159,7 +159,7 @@ const ThemeThree = () => {
                     products={products}
                     heading="New Arrivals"
                     ProductCardComponent={ThemeThreeProductCard} />
-                <ThemeOneBannerContentSection />
+                {/* <ThemeOneBannerContentSection /> */}
                 <Section
                     heading={"OUR HAPPY CLIENTS"}
                     className={"bg-white"}

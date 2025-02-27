@@ -91,11 +91,12 @@ const ThemeThreeNavbar = () => {
 
             {/* Logo */}
             <Link to="/theme/2" className="flex-shrink-0">
-              <img
+              {/* <img
                 src="https://themetwo.com/logo.png"
                 alt="Theme 2"
                 className="h-10 w-auto"
-              />
+              /> */}
+               <span className="text-lg md:text-xl font-bold">Grocery</span>
             </Link>
 
             {/* Search */}

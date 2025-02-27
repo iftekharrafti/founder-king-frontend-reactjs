@@ -82,7 +82,7 @@ const ThemeTwoNavbar = () => {
 
         {/* Mobile Navigation Menu */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200">
+          <div className="md:hidden py-4 border-t border-gray-200 bg-white">
             <div className="flex flex-col space-y-3 px-2">
               {/* <NavLinks links={links} isMobileMenuOpen={isOpen} /> */}
               {links.map((link, index) => (
