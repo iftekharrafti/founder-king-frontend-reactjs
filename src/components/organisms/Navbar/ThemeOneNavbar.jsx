@@ -84,11 +84,12 @@ const ThemeOneNavbar = () => {
           <div className="flex items-center justify-between gap-4">
             {/* Logo */}
             <Link to="/theme/1" className="flex-shrink-0">
-              <img
+              {/* <img
                 src="https://themeone.com/wp-content/uploads/2023/08/ThemeOne-logo.png"
                 alt="Theme 1"
                 className="h-8 sm:h-10 md:h-12 w-auto"
-              />
+              /> */}
+              Logo
             </Link>
 
             {/* Search */}

@@ -8,6 +8,7 @@ import Section from "../../templates/Section/Section";
 import TestimonialsSection from "../../organisms/TestimonialsSection/TestimonialsSection";
 import GridTemplate from "../../UI/GridTemplate/GridTemplate";
 import CategoryCard from "../../organisms/CategoryCard/CategoryCard";
+import CategorySection from "../../UI/CategorySection/CategorySection";
 
 const ThemeTwo = () => {
   const { updateThemeColors } = useColors();
@@ -171,13 +172,7 @@ const ThemeTwo = () => {
           heading="Featured Products"
           ProductCardComponent={ThemeTwoProductCard}
         />
-        <Section heading="Top Categories">
-          <GridTemplate columns={4}>
-            {categories.map((category, index) => (
-              <CategoryCard key={index} category={category} />
-            ))}
-          </GridTemplate>
-        </Section>
+        <CategorySection heading={"Our Categories"} categories={categories} CategoryCardComponent={CategoryCard} />
         <FeatureProductsSection
           products={products}
           heading="New Arrivals"

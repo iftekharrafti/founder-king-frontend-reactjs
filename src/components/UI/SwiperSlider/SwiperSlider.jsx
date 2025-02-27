@@ -13,7 +13,7 @@ const SwiperSlider = ({
   sm,
   icon = true,
   autoplay = false,
-  slidesPerView = 1,
+  slidesPerView,
   className = "",
   fullscreen = false,
   paginationBtn = true,
@@ -33,6 +33,13 @@ const SwiperSlider = ({
     }
   }, []);
 
+  useEffect(() => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.update(); // Force Swiper to reinitialize with correct breakpoints
+    }
+  }, [sm, md, lg]);
+
+
   return (
     <div className="relative">
       {/* Custom Navigation Buttons */}
@@ -40,13 +47,13 @@ const SwiperSlider = ({
         <div>
           <div
             ref={navigationPrevRef}
-            className={`custom-prev-icon text-[32px] absolute top-[36%] cursor-pointer w-[50px] h-[50px] bg-[#d4c7c7] rounded-[50%] flex justify-center items-center z-30 hover:bg-black text-white`}
+            className={`custom-prev-icon text-[32px] absolute top-[36%] cursor-pointer md:w-[50px] md:h-[50px] w-[40px] h-[40px] bg-[#d4c7c7] rounded-[50%] flex justify-center items-center z-30 hover:bg-black text-white`}
             style={{ left: fullscreen ? "5px" : "-25px" }}>
             <RiArrowLeftSLine />
           </div>
           <div
             ref={navigationNextRef}
-            className={`custom-next-icon text-[32px] absolute top-[36%] cursor-pointer w-[50px] h-[50px] bg-[#b3b3b3] rounded-[50%] flex justify-center items-center z-30 hover:bg-black text-white`}
+            className={`custom-next-icon text-[32px] absolute top-[36%] cursor-pointer md:w-[50px] md:h-[50px] w-[40px] h-[40px] bg-[#b3b3b3] rounded-[50%] flex justify-center items-center z-30 hover:bg-black text-white`}
             style={{ right: fullscreen ? "5px" : "-25px" }}
           >
             <RiArrowRightSLine />
@@ -58,8 +65,8 @@ const SwiperSlider = ({
       <Swiper
         ref={swiperRef}
         modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={30}
-        // slidesPerView={slidesPerView}
+        // spaceBetween={30}
+        slidesPerView={slidesPerView}
         navigation={{
           prevEl: navigationPrevRef.current,
           nextEl: navigationNextRef.current,
@@ -69,16 +76,18 @@ const SwiperSlider = ({
         autoplay={
           autoplay
             ? {
-                delay: 3000, // Auto-slide every 3 seconds
-                disableOnInteraction: false, // Keeps autoplay running after user interaction
-              }
+              delay: 3000, // Auto-slide every 3 seconds
+              disableOnInteraction: false, // Keeps autoplay running after user interaction
+            }
             : false
         }
         breakpoints={{
-          640: { slidesPerView: sm },
-          768: { slidesPerView: md },
-          1024: { slidesPerView: lg },
+          320: { slidesPerView: sm, spaceBetween: 10 }, // Very small screens
+          640: { slidesPerView: sm, spaceBetween: 20 },
+          768: { slidesPerView: md, spaceBetween: 30 },
+          1024: { slidesPerView: lg, spaceBetween: 40 },
         }}
+        onInit={(swiper) => console.log("space:: ", swiper.params.spaceBetween)} // Debug
         className={`${className}`}
       >
         {React.Children.map(children, (child, index) =>

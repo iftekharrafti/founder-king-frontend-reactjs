@@ -11,7 +11,7 @@ const FeatureProductsSection = ({
   ProductCardComponent,
 }) => {
   return (
-    <section className="py-1 px-4 bg-gray-50">
+    <section className="py-1 md:px-4 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <Section heading={heading}>
           {/* <GridTemplate columns={4} gap={6} className="mt-8"> */}
@@ -22,6 +22,7 @@ const FeatureProductsSection = ({
             icon={true}
             autoplay={true}
             paginationBtn={false}
+            slidesPerView={2}
           >
             {products.map((product, index) => (
               <SwiperSlide key={index}>

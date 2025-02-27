@@ -1,18 +1,60 @@
 import React, { useEffect } from 'react';
-import ThemeOneMainTemplate from '../../templates/ThemeOneMainTemplate/ThemeOneMainTemplate';
 import ThemeOneBannerContentSection from '../../organisms/ThemeOneHeroSection/ThemeOneHeroSection';
-import ProductCategory from '../../organisms/ProductCategory/ProductCategory';
 import FeatureProductsSection from '../../UI/FeatureProductsSection/FeatureProductsSection';
 import Section from '../../templates/Section/Section';
 import TestimonialsSection from '../../organisms/TestimonialsSection/TestimonialsSection';
 import { useColors } from '../../../context/colorContext';
-import ThemeOneProductCategory from '../../organisms/ThemeOneProductCategory/ThemeOneProductCategory';
 import ThemeOneHeroSection from '../../organisms/HeroSection/ThemeOneHeroSection';
 import ThemeThreeMainTemplate from '../../templates/ThemeThreeMainTemplate/ThemeThreeMainTemplate';
-import ThemeThreeProductCategory from '../../organisms/ThemeThreeProductCategory/ThemeThreeProductCategory';
+import ThemeThreeProductCategoryCard from '../../organisms/ThemeThreeProductCategoryCard/ThemeThreeProductCategoryCard';
 import ThemeThreeProductCard from '../../atoms/ThemeThreeProductCard/ThemeThreeProductCard';
+import CategorySection from '../../UI/CategorySection/CategorySection';
 
 const ThemeThree = () => {
+    const categories = [
+        {
+            id: 1,
+            name: "Men's Fashion",
+            imageUrl: "https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=800&auto=format&fit=crop&q=80",
+        },
+        {
+            id: 2,
+            name: "Women's Collection",
+            imageUrl: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&auto=format&fit=crop&q=80",
+        },
+        {
+            id: 3,
+            name: "Accessories",
+            imageUrl: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=800&auto=format&fit=crop&q=80",
+        },
+        {
+            id: 3,
+            name: "Accessories",
+            imageUrl: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=800&auto=format&fit=crop&q=80",
+        },
+        {
+            id: 3,
+            name: "Accessories",
+            imageUrl: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=800&auto=format&fit=crop&q=80",
+        },
+        {
+            id: 3,
+            name: "Accessories",
+            imageUrl: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=800&auto=format&fit=crop&q=80",
+        },
+        {
+            id: 3,
+            name: "Accessories",
+            imageUrl: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=800&auto=format&fit=crop&q=80",
+        },
+        {
+            id: 3,
+            name: "Accessories",
+            imageUrl: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=800&auto=format&fit=crop&q=80",
+        },
+    ];
+
+
     const products = [
         {
             id: 1,
@@ -107,7 +149,7 @@ const ThemeThree = () => {
         <div>
             <ThemeThreeMainTemplate>
                 <ThemeOneHeroSection slides={heroSlides} />
-                <ThemeThreeProductCategory />
+                <CategorySection heading={"Product Categories"} categories={categories} CategoryCardComponent={ThemeThreeProductCategoryCard} />
                 <FeatureProductsSection
                     products={products}
                     heading="Featured Products"
