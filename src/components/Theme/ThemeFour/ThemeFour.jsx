@@ -11,6 +11,8 @@ import CategorySection from '../../UI/CategorySection/CategorySection';
 import ThemeThreeProductCard from '../../atoms/ProductCard/ThemeThreeProductCard';
 import ThemeFourMainTemplate from '../../templates/ThemeFourMainTemplate/ThemeFourMainTemplate';
 import ThemeFourProductCard from '../../atoms/ProductCard/ThemeFourProductCard';
+import ThemeFourProductCategoryCard from '../../organisms/CategoryCard/ThemeFourProductCategoryCard';
+import CategorySectionTwo from '../../UI/CategorySection/CategorySectionTwo';
 
 const ThemeFour = () => {
     const categories = [
@@ -151,7 +153,7 @@ const ThemeFour = () => {
         <div>
             <ThemeFourMainTemplate>
                 <ThemeOneHeroSection slides={heroSlides} />
-                <CategorySection heading={"Product Categories"} categories={categories} CategoryCardComponent={ThemeThreeProductCategoryCard} />
+                <CategorySectionTwo heading={"Product Categories"} categories={categories} CategoryCardComponent={ThemeFourProductCategoryCard} />
                 <FeatureProductsSection
                     products={products}
                     heading="Featured Products"
