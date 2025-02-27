@@ -17,6 +17,7 @@ import AddtoCart from "../components/organisms/AddtoCart/AddtoCart";
 import Wishlist from "../components/organisms/Wishlist/Wishlist";
 import CheckoutPage from "../components/organisms/CheckoutPage/CheckoutPage";
 import ThemeThree from "../components/Theme/ThemeThree/ThemeThree";
+import ThemeFour from "../components/Theme/ThemeFour/ThemeFour";
 
 const router = createBrowserRouter([
   {
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
       {
         path: "/theme/3",
         element: <ThemeThree />,
+      },
+      {
+        path: "/theme/4",
+        element: <ThemeFour />,
       },
       {
         path: "/add-to-cart",
