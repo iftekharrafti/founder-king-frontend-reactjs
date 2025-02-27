@@ -1,7 +1,5 @@
 import React from "react";
 import Section from "../../templates/Section/Section";
-import GridTemplate from "../GridTemplate/GridTemplate";
-import ProductCard from "../../atoms/PorductCard/PorductCard";
 import SwiperSlider from "../SwiperSlider/SwiperSlider";
 import { Swiper, SwiperSlide } from "swiper/react";
 

@@ -8,8 +8,8 @@ import TestimonialsSection from "../../organisms/TestimonialsSection/Testimonial
 import { useColors } from "../../../context/colorContext";
 // import ThemeOneTopCategoriesSection from "../../organisms/TopCategoriesSection/ThemeOneTopCategoriesSection";
 import ThemeOneHeroSection from "../../organisms/HeroSection/ThemeOneHeroSection";
-import ProductCard from "../../atoms/PorductCard/PorductCard";
 import CategorySection from "../../UI/CategorySection/CategorySection";
+import ProductCard from "../../atoms/ProductCard/ProductCard";
 
 const ThemeOne = () => {
   const categories = [

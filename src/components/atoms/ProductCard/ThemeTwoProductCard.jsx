@@ -1,8 +1,8 @@
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
-import BadgeTwo from "../../atoms/Badge/BadgeTwo";
+import BadgeTwo from "../Badge/BadgeTwo";
 import ProductImage from "../../molecules/Product/ProductImage";
-import Rating from "../../atoms/Rating/Rating";
-import PriceTagTwo from "../../atoms/PriceTag/PriceTagTwo";
+import Rating from "../Rating/Rating";
+import PriceTagTwo from "../PriceTag/PriceTagTwo";
 
 const ThemeTwoProductCard = ({ product }) => {
   const {

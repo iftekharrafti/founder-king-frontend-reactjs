@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useColors } from "../../../context/colorContext";
 import ThemeTwoMainTemplate from "../../templates/ThemeTwoMainTemplate/ThemeTwoMainTemplate";
 import ThemeTwoHeroSection from "../../organisms/HeroSection/ThemeTwoHeroSection";
-import ThemeTwoProductCard from "../../organisms/ProductCard/ThemeTwoProductCard";
 import FeatureProductsSection from "../../UI/FeatureProductsSection/FeatureProductsSection";
 import Section from "../../templates/Section/Section";
 import TestimonialsSection from "../../organisms/TestimonialsSection/TestimonialsSection";
-import GridTemplate from "../../UI/GridTemplate/GridTemplate";
 import CategoryCard from "../../organisms/CategoryCard/CategoryCard";
 import CategorySection from "../../UI/CategorySection/CategorySection";
+import ThemeTwoProductCard from "../../atoms/ProductCard/ThemeTwoProductCard";
 
 const ThemeTwo = () => {
   const { updateThemeColors } = useColors();

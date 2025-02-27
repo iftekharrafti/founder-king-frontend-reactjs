@@ -7,8 +7,8 @@ import { useColors } from '../../../context/colorContext';
 import ThemeOneHeroSection from '../../organisms/HeroSection/ThemeOneHeroSection';
 import ThemeThreeMainTemplate from '../../templates/ThemeThreeMainTemplate/ThemeThreeMainTemplate';
 import ThemeThreeProductCategoryCard from '../../organisms/ThemeThreeProductCategoryCard/ThemeThreeProductCategoryCard';
-import ThemeThreeProductCard from '../../atoms/ThemeThreeProductCard/ThemeThreeProductCard';
 import CategorySection from '../../UI/CategorySection/CategorySection';
+import ThemeThreeProductCard from '../../atoms/ProductCard/ThemeThreeProductCard';
 
 const ThemeThree = () => {
     const categories = [
