@@ -5,7 +5,7 @@ import ThemeTwoHeroSection from "../../organisms/HeroSection/ThemeTwoHeroSection
 import FeatureProductsSection from "../../UI/FeatureProductsSection/FeatureProductsSection";
 import Section from "../../templates/Section/Section";
 import TestimonialsSection from "../../organisms/TestimonialsSection/TestimonialsSection";
-import CategoryCard from "../../organisms/CategoryCard/CategoryCard";
+import ThemeTwoProductCategoryCard from "../../organisms/CategoryCard/ThemeTwoProductCategoryCard";
 import CategorySection from "../../UI/CategorySection/CategorySection";
 import ThemeTwoProductCard from "../../atoms/ProductCard/ThemeTwoProductCard";
 
@@ -171,7 +171,7 @@ const ThemeTwo = () => {
           heading="Featured Products"
           ProductCardComponent={ThemeTwoProductCard}
         />
-        <CategorySection heading={"Our Categories"} categories={categories} CategoryCardComponent={CategoryCard} />
+        <CategorySection heading={"Our Categories"} categories={categories} CategoryCardComponent={ThemeTwoProductCategoryCard} />
         <FeatureProductsSection
           products={products}
           heading="New Arrivals"

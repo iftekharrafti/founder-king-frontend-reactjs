@@ -6,7 +6,7 @@ import TestimonialsSection from '../../organisms/TestimonialsSection/Testimonial
 import { useColors } from '../../../context/colorContext';
 import ThemeOneHeroSection from '../../organisms/HeroSection/ThemeOneHeroSection';
 import ThemeThreeMainTemplate from '../../templates/ThemeThreeMainTemplate/ThemeThreeMainTemplate';
-import ThemeThreeProductCategoryCard from '../../organisms/ThemeThreeProductCategoryCard/ThemeThreeProductCategoryCard';
+import ThemeThreeProductCategoryCard from '../../organisms/CategoryCard/ThemeThreeProductCategoryCard';
 import CategorySection from '../../UI/CategorySection/CategorySection';
 import ThemeThreeProductCard from '../../atoms/ProductCard/ThemeThreeProductCard';
 import ThemeFourMainTemplate from '../../templates/ThemeFourMainTemplate/ThemeFourMainTemplate';

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import ThemeOneMainTemplate from "../../templates/ThemeOneMainTemplate/ThemeOneMainTemplate";
 import ThemeOneBannerContentSection from "../../organisms/ThemeOneHeroSection/ThemeOneHeroSection";
-import ThemeOneProductCategoryCard from "../../organisms/ThemeOneProductCategoryCard/ThemeOneProductCategoryCard";
+import ThemeOneProductCategoryCard from "../../organisms/CategoryCard/ThemeOneProductCategoryCard";
 import FeatureProductsSection from "../../UI/FeatureProductsSection/FeatureProductsSection";
 import Section from "../../templates/Section/Section";
 import TestimonialsSection from "../../organisms/TestimonialsSection/TestimonialsSection";

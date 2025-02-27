@@ -3,7 +3,7 @@ import Image from "../../atoms/Images/Image";
 import Text from "../../atoms/Text/Text";
 import CategoryInfo from "../../molecules/CategoryInfo/CategoryInfo";
 
-const CategoryCard = ({ category }) => {
+const ThemeTwoProductCategoryCard = ({ category }) => {
   const { name, imageUrl } = category;
 
   return (
@@ -42,4 +42,4 @@ const CategoryCard = ({ category }) => {
   );
 };
 
-export default CategoryCard;
+export default ThemeTwoProductCategoryCard;
