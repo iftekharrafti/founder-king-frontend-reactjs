@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 function PricingSectionTwo({ data }) {
+  console.log("data:::", data);
   const [isYearly, setIsYearly] = useState(false);
 
   return (
@@ -42,13 +43,13 @@ function PricingSectionTwo({ data }) {
           </div>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-4 lg:gap-8">
+        <div className="mt-12 grid gap-6 grid-cols-1 md:grid-cols-4 md:gap-8">
           {data?.map((plan, index) => (
             <div
-              key={plan.name}
+              key={plan.id}
               className="relative flex flex-col rounded-2xl bg-white shadow-lg overflow-hidden h-full"
             >
-              {plan.isPopular && (
+              {plan.is_popular && (
                 <div className="absolute -left-[5.5rem] top-[1rem] w-[243px] transform -rotate-45 z-10">
                   <div className="py-1 text-center text-white font-semibold bg-black shadow-lg relative">
                     <span className="text-sm">Popular Plan</span>
@@ -65,10 +66,10 @@ function PricingSectionTwo({ data }) {
                   <h3 className="text-3xl font-semibold text-white text-center">
                     {plan.name}
                   </h3>
-                  <p className="text-white text-center">{plan.price}</p>
+                  <p className="text-white text-center">৳ {plan.price}</p>
                   <ul className="mt-32 sm:mt-24 md:mt-32 md:ml-12 lg:ml-0 lg:mt-6 space-y-2">
                     {/* <ul className="mt-32 sm:mt-40 md:mt-60 md:ml-12 lg:ml-0 lg:mt-6 space-y-2"> */}
-                    {plan.features.map((feature, featureIndex) => (
+                    {plan?.features?.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start">
                         <svg
                           className="h-6 w-6 text-green-500 flex-shrink-0"
@@ -83,7 +84,7 @@ function PricingSectionTwo({ data }) {
                             d="M5 13l4 4L19 7"
                           />
                         </svg>
-                        <span className="ml-3 text-gray-500">{feature}</span>
+                        <span className="ml-3 text-gray-500">{feature?.feature_text}</span>
                       </li>
                     ))}
                   </ul>
@@ -96,7 +97,8 @@ function PricingSectionTwo({ data }) {
               </div>
 
               <div className="absolute xs:top-[-50px] sm:top-[-80px] md:top-[-120px] lg:top-0 z-0">
-                <div className={`mask-demo ${plan.color}`}>
+                {/* <div className={`mask-demo ${plan.color}`}> */}
+                <div className={`mask-demo bg-orange-500`}>
                   <img
                     src="images\price_bg.png"
                     alt="Description"

@@ -21,8 +21,8 @@ const ServicesSection = ({ data }) => {
         <GridTemplate columns={3}>
           {data?.map((item, index) => (
             <CardWithHoverBG key={index} item={item}>
-              <CardIcon imageUrl={item?.imageUrl} alt={item?.title} />
-              <CardTitle title={item?.title} />
+              <CardIcon imageUrl={item?.image} alt={item?.name} />
+              <CardTitle title={item?.name} />
               <CardDescription description={item?.description} />
             </CardWithHoverBG>
           ))}

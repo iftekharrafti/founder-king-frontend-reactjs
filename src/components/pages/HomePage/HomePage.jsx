@@ -169,25 +169,25 @@ const HomePage = () => {
             {/* <HeroSectionTwo /> */}
             {/* Pricing Section */}
 
-            <PricingSectionTwo data={pricingData} />
+            <PricingSectionTwo data={homeSectionData?.data?.packages} />
 
             {/* Service Section */}
-            <ServicesSection data={services} />
+            <ServicesSection data={homeSectionData?.data?.services} />
 
             {/* Landing Page Section */}
 
-            <LandingPageSection data={solutions} />
+            <LandingPageSection data={homeSectionData?.data?.landingpages} />
 
             {/* Service Section */}
             <Section
               heading={"Our Happy Clients"}
               className={"bg-global-primary pb-12"}
             >
-              <HappyCustomer />
+              <HappyCustomer clients={homeSectionData?.data?.clients} />
             </Section>
 
             {/* Testimonial Section */}
-            <FounderTestimonial />
+            <FounderTestimonial founders={homeSectionData?.data?.testimonials} />
             <Newsletter />
 
             {/* Stats Section */}

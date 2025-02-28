@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import SwiperSlider from '@/components/UI/SwiperSlider/SwiperSlider';
 
-const HappyCustomer = () => {
+const HappyCustomer = ({ clients }) => {
     const logos = [
         {
             src: "https://www.logodesign.net/logo-new/mountains-with-cloud-trees-and-grass-landscape-1333ld.png?nwm=1&nws=1&industry=landscape&txt_keyword=All",
@@ -35,13 +35,13 @@ const HappyCustomer = () => {
     return (
         <div>
             <SwiperSlider lg={5} md={3} sm={1} icon={false} autoplay={true}>
-                {logos.map((logo, index) => (
+                {clients?.map((client, index) => (
                     <SwiperSlide key={index}>
                         <div className="max-h-28 flex items-center justify-center p-4 bg-gray-100 rounded-lg shadow-sm
     transform transition-all duration-300 hover:shadow-xl hover:scale-105">
                             <img
-                                src={logo.src}
-                                alt={logo.alt}
+                                src={client.logo}
+                                alt={client.id}
                                 className="max-h-24 w-auto object-contain"
                             />
                         </div>
