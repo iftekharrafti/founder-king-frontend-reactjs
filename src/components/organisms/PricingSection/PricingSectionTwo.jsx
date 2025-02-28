@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function PricingSectionTwo({ data }) {
+function PricingSectionTwo({ data, pricingData }) {
   console.log("data:::", data);
   const [isYearly, setIsYearly] = useState(false);
 
@@ -9,15 +9,15 @@ function PricingSectionTwo({ data }) {
       <div className="max-w-7xl mx-auto">
         <div className="text-center">
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-            Choose Your Plan
+            {pricingData?.title}
           </h2>
           <p className="mt-3 text-2xl text-gray-500 font-bold">
-            By buying a yearly plan, you can save 30%.
+            {pricingData?.content}
           </p>
           <p className="text-black text-xl font-light mt-2">
-            Get First month{" "}
+            {pricingData?.plain_text}{" "}
             <span className="bg-global-primary text-white px-2 py-1 rounded">
-              Free trial
+              {pricingData?.highlight_text}
             </span>
           </p>
         </div>
@@ -25,17 +25,15 @@ function PricingSectionTwo({ data }) {
         <div className="mt-6 flex justify-center">
           <div className="relative flex bg-transparent border-2 border-gray-400 rounded-lg">
             <button
-              className={`px-4 py-1 rounded-md ${
-                !isYearly ? "bg-blue-600 shadow-sm text-white" : ""
-              }`}
+              className={`px-4 py-1 rounded-md ${!isYearly ? "bg-blue-600 shadow-sm text-white" : ""
+                }`}
               onClick={() => setIsYearly(false)}
             >
               Monthly
             </button>
             <button
-              className={`px-4 py-1 rounded-md ${
-                isYearly ? "bg-blue-600 shadow-sm text-white" : ""
-              }`}
+              className={`px-4 py-1 rounded-md ${isYearly ? "bg-blue-600 shadow-sm text-white" : ""
+                }`}
               onClick={() => setIsYearly(true)}
             >
               Yearly

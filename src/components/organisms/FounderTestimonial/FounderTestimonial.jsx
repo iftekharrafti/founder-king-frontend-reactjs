@@ -51,7 +51,7 @@ const testimonials = [
     }
 ];
 
-const FounderTestimonial = ({ founders }) => {
+const FounderTestimonial = ({ founders, testimonialData }) => {
 
 
     return (
@@ -60,6 +60,7 @@ const FounderTestimonial = ({ founders }) => {
                 <div className="flex justify-center items-center">
                     <h2 className="text-4xl md:text-5xl font-bold text-center text-orange-500 mb-4 border-2 border-global-primary inline-block px-4 py-2 rounded-3xl">
                         What Founders are saying
+                        {testimonialData?.title}
                     </h2>
                 </div>
                 <div className="mt-12">
