@@ -3,7 +3,13 @@ import SwiperSlider from "../../UI/SwiperSlider/SwiperSlider";
 
 const ThemeTwoHeroSection = ({ slides }) => {
   return (
-    <SwiperSlider className="h-[70vh]" lg={1} md={1} sm={1} fullscreen={true}>
+    <SwiperSlider
+      className="h-[40vh] md:h-[50vh] lg:h-[70vh]"
+      lg={1}
+      md={1}
+      sm={1}
+      fullscreen={true}
+    >
       {slides?.map((slide, index) => (
         <SwiperSlide key={index}>
           <div className="relative w-full h-full">
