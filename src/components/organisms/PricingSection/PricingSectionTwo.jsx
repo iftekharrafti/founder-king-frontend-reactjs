@@ -25,15 +25,17 @@ function PricingSectionTwo({ data, pricingData }) {
         <div className="mt-6 flex justify-center">
           <div className="relative flex bg-transparent border-2 border-gray-400 rounded-lg">
             <button
-              className={`px-4 py-1 rounded-md ${!isYearly ? "bg-blue-600 shadow-sm text-white" : ""
-                }`}
+              className={`px-4 py-1 rounded-md ${
+                !isYearly ? "bg-blue-600 shadow-sm text-white" : ""
+              }`}
               onClick={() => setIsYearly(false)}
             >
               Monthly
             </button>
             <button
-              className={`px-4 py-1 rounded-md ${isYearly ? "bg-blue-600 shadow-sm text-white" : ""
-                }`}
+              className={`px-4 py-1 rounded-md ${
+                isYearly ? "bg-blue-600 shadow-sm text-white" : ""
+              }`}
               onClick={() => setIsYearly(true)}
             >
               Yearly
@@ -41,13 +43,13 @@ function PricingSectionTwo({ data, pricingData }) {
           </div>
         </div>
 
-        <div className="mt-12 grid gap-6 grid-cols-1 md:grid-cols-4 md:gap-8">
+        <div className="mt-12 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {data?.map((plan, index) => (
             <div
               key={plan.id}
               className="relative flex flex-col rounded-2xl bg-white shadow-lg overflow-hidden h-full"
             >
-              {plan.is_popular && (
+              {!!plan?.is_popular && (
                 <div className="absolute -left-[5.5rem] top-[1rem] w-[243px] transform -rotate-45 z-10">
                   <div className="py-1 text-center text-white font-semibold bg-black shadow-lg relative">
                     <span className="text-sm">Popular Plan</span>
@@ -82,19 +84,21 @@ function PricingSectionTwo({ data, pricingData }) {
                             d="M5 13l4 4L19 7"
                           />
                         </svg>
-                        <span className="ml-3 text-gray-500">{feature?.feature_text}</span>
+                        <span className="ml-3 text-gray-500">
+                          {feature?.feature_text}
+                        </span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <button
-                  className={`mt-8 w-full rounded-md px-4 py-2 text-sm font-semibold text-white shadow-sm ${plan.color} hover:opacity-90`}
+                  className={`mt-8 w-full rounded-md px-4 py-2 text-sm font-semibold text-white shadow-sm bg-global-primary hover:opacity-90`}
                 >
                   Order Now
                 </button>
               </div>
 
-              <div className="absolute xs:top-[-50px] sm:top-[-80px] md:top-[-120px] lg:top-0 z-0">
+              <div className="absolute xs:top-[-50px] sm:top-[-80px] md:top-[-15px] lg:top-0 z-0">
                 {/* <div className={`mask-demo ${plan.color}`}> */}
                 <div className={`mask-demo bg-orange-500`}>
                   <img
