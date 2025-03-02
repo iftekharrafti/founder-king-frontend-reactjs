@@ -13,6 +13,7 @@ import ThemeFourMainTemplate from '../../templates/ThemeFourMainTemplate/ThemeFo
 import ThemeFourProductCard from '../../atoms/ProductCard/ThemeFourProductCard';
 import ThemeFourProductCategoryCard from '../../organisms/CategoryCard/ThemeFourProductCategoryCard';
 import CategorySectionTwo from '../../UI/CategorySection/CategorySectionTwo';
+import ProductColumn from '../../UI/ProductColumn/ProductColumn';
 
 const ThemeFour = () => {
     const categories = [
@@ -58,60 +59,6 @@ const ThemeFour = () => {
         },
     ];
 
-
-    const products = [
-        {
-            id: 1,
-            name: "Classic White Sneakers",
-            mainPrice: 99.99,
-            discountedPrice: 89.99,
-            inStock: true,
-            rating: 4.5,
-            mainImage: "https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=800",
-            hoverImage: "https://img.freepik.com/free-photo/one-black-sneaker-shoe-isolated-white_93675-131266.jpg?ga=GA1.1.654311608.1722150614&semt=ais_hybrid"
-        },
-        {
-            id: 2,
-            name: "Leather Crossbody Bag",
-            mainPrice: 149.99,
-            discountedPrice: 129.99,
-            inStock: true,
-            rating: 4.7,
-            mainImage: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800",
-            hoverImage: "https://img.freepik.com/premium-photo/vintage-style-chic-fashion-accessories-lady-set_161568-2367.jpg?ga=GA1.1.654311608.1722150614&semt=ais_hybrid"
-        },
-        {
-            id: 3,
-            name: "Minimalist Watch - Silver",
-            mainPrice: 219.99,
-            discountedPrice: 199.99,
-            inStock: false,
-            rating: 4.8,
-            mainImage: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800",
-            hoverImage: "https://img.freepik.com/free-vector/smart-watch-realistic_78370-593.jpg?ga=GA1.1.654311608.1722150614&semt=ais_hybrid"
-        },
-        {
-            id: 4,
-            name: "Wireless Headphones",
-            mainPrice: 179.99,
-            discountedPrice: 159.99,
-            inStock: true,
-            rating: 4.6,
-            mainImage: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800",
-            hoverImage: "https://img.freepik.com/free-photo/recording-human-icon-stereo-wireless_1232-3551.jpg?ga=GA1.1.654311608.1722150614&semt=ais_hybrid"
-        },
-        {
-            id: 5,
-            name: "Leather Crossbody Bag",
-            mainPrice: 149.99,
-            discountedPrice: 129.99,
-            inStock: true,
-            rating: 4.7,
-            mainImage: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800",
-            hoverImage: "https://img.freepik.com/premium-photo/vintage-style-chic-fashion-accessories-lady-set_161568-2367.jpg?ga=GA1.1.654311608.1722150614&semt=ais_hybrid"
-        },
-    ];
-
     const heroSlides = [
         {
             imageUrl:
@@ -129,6 +76,88 @@ const ThemeFour = () => {
             imageAlt: "Sunset over the ocean",
         },
     ];
+
+    const bestSellers = [
+        {
+            image: "https://i.ibb.co/Jk8FWtY/oil.jpg",
+            title: "Fresh-Fortified-Soyabean-Oil",
+            rating: 0,
+            price: "950"
+        },
+        {
+            image: "https://i.ibb.co/YQXzRmw/beef-liver.jpg",
+            title: "Beef-Liver-Kolija",
+            rating: 0,
+            price: "400"
+        },
+        {
+            image: "https://i.ibb.co/0MKKgzx/pangas.jpg",
+            title: "Pangas-Fish-After-Cutting",
+            rating: 0,
+            price: "500"
+        },
+        {
+            image: "https://i.ibb.co/VqFKtPM/chicken.jpg",
+            title: "Whole-Deshi-Chicken",
+            rating: 0,
+            price: "200"
+        }
+    ];
+
+    const topSelling = [
+        {
+            image: "https://i.ibb.co/zfwg8wc/pumpkin.jpg",
+            title: "Misti-Kumra-Pumpkin",
+            rating: 0,
+            price: "80"
+        },
+        {
+            image: "https://i.ibb.co/Jk8FWtY/beef-bone.jpg",
+            title: "Beef-Bone-In-Small-Piece",
+            rating: 0,
+            price: "600"
+        },
+        {
+            image: "https://i.ibb.co/YQXzRmw/carrot.jpg",
+            title: "Gajor-Imported-Carrot",
+            rating: 0,
+            price: "50"
+        },
+        {
+            image: "https://i.ibb.co/0MKKgzx/beef-boneless.jpg",
+            title: "Beef-Boneless-Premium-Cut",
+            rating: 0,
+            price: "700"
+        }
+    ];
+
+    const recentlyAdded = [
+        {
+            image: "https://i.ibb.co/VqFKtPM/chicken-whole.jpg",
+            title: "Cock-Chicken-Sonali",
+            rating: 0,
+            price: "350"
+        },
+        {
+            image: "https://i.ibb.co/zfwg8wc/hilsha.jpg",
+            title: "Whole-Hilsha-Fish",
+            rating: 0,
+            price: "250"
+        },
+        {
+            image: "https://i.ibb.co/Jk8FWtY/broiler.jpg",
+            title: "Broiler-Chicken-Dressed",
+            rating: 0,
+            price: "240"
+        },
+        {
+            image: "https://i.ibb.co/YQXzRmw/spinach.jpg",
+            title: "Aarong-Natural-Spinach",
+            rating: 0,
+            price: "850"
+        }
+    ];
+
 
     const { updateThemeColors } = useColors();
 
@@ -154,15 +183,16 @@ const ThemeFour = () => {
             <ThemeFourMainTemplate>
                 <ThemeOneHeroSection slides={heroSlides} />
                 <CategorySectionTwo heading={"Product Categories"} categories={categories} CategoryCardComponent={ThemeFourProductCategoryCard} />
-                <FeatureProductsSection
-                    products={products}
-                    heading="Featured Products"
-                    ProductCardComponent={ThemeFourProductCard}
-                />
-                <FeatureProductsSection
-                    products={products}
-                    heading="New Arrivals"
-                    ProductCardComponent={ThemeFourProductCard} />
+                <section className="py-12 bg-gradient-to-b from-white to-gray-50">
+                    <div className="max-w-7xl mx-auto px-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <ProductColumn title="Best Seller" products={bestSellers} />
+                            <ProductColumn title="Top Selling" products={topSelling} />
+                            <ProductColumn title="Recently Added" products={recentlyAdded} />
+                        </div>
+                    </div>
+                </section>
+
                 {/* <ThemeOneBannerContentSection /> */}
                 <Section
                     heading={"OUR HAPPY CLIENTS"}

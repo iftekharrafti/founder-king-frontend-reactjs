@@ -3,36 +3,34 @@ import { FaStar, FaRegStar, FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const ThemeFourProductCard = ({ product }) => {
+    const rating = Math.floor(Math.random() * 5) + 1;
+    const stars = [];
+
+    for (let i = 1; i <= 5; i++) {
+        if (i <= rating) {
+            stars.push(<FaStar key={i} className="text-yellow-400" />);
+        } else {
+            stars.push(<FaRegStar key={i} className="text-teal-300" />);
+        }
+    }
     return (
-        <div className="max-w-xs transition-all duration-300 rounded-lg overflow-hidden shadow-2xl hover:shadow-md hover:border hover:border-gray-300">
-            <div className="relative">
+        <div className="flex items-center gap-4 py-4 border-b border-gray-100 group">
+            <div className="w-20 h-20 flex-shrink-0 overflow-hidden rounded-lg">
                 <img
-                    src={product.mainImage}
-                    alt="Fusion Chair"
-                    className="w-full h-64 object-cover"
+                    src={product.image}
+                    alt={product.title}
+                    className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
                 />
             </div>
-
-            <div className="p-4">
-                <Link to={`/product/${product.id}`}>
-                    <h1 className="text-gray-500 text-base font-semibold mb-1">{product.name}</h1>
-                </Link>
-
-                <div className="flex mb-2">
-                    {[...Array(5)].map((_, i) => (
-                        <FaRegStar key={i} className="text-theme-primary text-sm" />
-                    ))}
+            <div className="flex-grow">
+                <h3 className="text-gray-700 font-medium mb-1 truncate text-theme-primary group-hover:text-theme-primary-hover transition-colors duration-300">
+                    <Link to={`/product/${product.id}`}>{product.title}</Link>
+                </h3>
+                <div className="flex">
+                    {stars}
                 </div>
-
-                <div className="flex items-center justify-between">
-                    <div>
-                        <span className="font-bold text-gray-800">BDT {product?.discountedPrice} </span>
-                        <span className="text-gray-400 line-through text-sm">BDT {product?.mainPrice}</span>
-                    </div>
-
-                    <button className="bg-theme-primary hover:bg-blue-600 text-white p-2 rounded-full">
-                        <FaShoppingCart />
-                    </button>
+                <div className="text-gray-800 font-semibold">
+                    ৳ {product.price}
                 </div>
             </div>
         </div>
