@@ -83,6 +83,8 @@ const PricingPage = () => {
       const pricingData = {
         title: packagesData?.data?.title,
         content: packagesData?.data?.content,
+        text: packagesData?.data?.text,
+        highlight_text: packagesData?.data?.highlight_text,
       }
     return (
         <div>

@@ -187,8 +187,7 @@ function PricingSectionTwo({ data, pricingData }) {
           <div className="bg-orange-500 rounded-xl p-8 text-center md:text-left  md:flex justify-between items-center relative overflow-hidden">
             <div className="text-white max-w-xl">
               <p className="text-2xl font-medium lg:ml-32 mb-2">
-                Our team of passionate web designers and developers is here to
-                assist you in creating a stunning website.
+                {pricingData?.banner_text}
               </p>
             </div>
             <button className="bg-white text-black px-8 py-4 rounded-lg font-semibold relative group hover:scale-105 transition-transform duration-300">
