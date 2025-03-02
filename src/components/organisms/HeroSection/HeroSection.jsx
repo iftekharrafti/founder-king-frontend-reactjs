@@ -28,7 +28,7 @@ const HeroSection = ({ slider }) => {
               <PrimaryButton className="md:text-[24px] text-lg bg-white text-black font-bold hover:bg-gray-300 md:mb-0 mb-4" link={slider?.button_url}>
                 {slider?.button_text}
               </PrimaryButton>
-              <SecondaryButton className="md:text-[24px] text-lg bg-white text-black font-bold hover:bg-gray-300 md:ml-0 ml-2" link={slider?.button_url}>
+              <SecondaryButton className="md:text-[24px] text-lg bg-white text-black font-bold hover:bg-gray-300 ml-0 md:ml-2" link={slider?.button_url}>
                 {slider?.button_text}
               </SecondaryButton>
             </div>

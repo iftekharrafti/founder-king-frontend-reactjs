@@ -58,7 +58,7 @@ const FounderTestimonial = ({ founders, testimonialData }) => {
         <section className="py-16 px-4 bg-gradient-to-br from-orange-50 to-purple-50">
             <div className="max-w-7xl mx-auto">
                 <div className="flex justify-center items-center">
-                    <h2 className="text-4xl md:text-5xl font-bold text-center text-orange-500 mb-4 border-2 border-global-primary inline-block px-4 py-2 rounded-3xl">
+                    <h2 className="text-2xl md:text-5xl font-bold text-center text-orange-500 mb-4 border-2 border-global-primary inline-block px-4 py-2 rounded-3xl">
                         What Founders are saying
                         {testimonialData?.title}
                     </h2>
@@ -75,7 +75,7 @@ const FounderTestimonial = ({ founders, testimonialData }) => {
                                         <h3 className="text-2xl font-bold text-gray-800">{founder?.name}</h3>
                                         <div className="flex gap-2 mt-2">
                                             <Badge text={founder?.role} />
-                                            <Badge text="XYZ" color="bg-orange-500" />
+                                            <Badge text={founder.role} color="bg-orange-500" />
                                         </div>
                                     </div>
                                 </div>

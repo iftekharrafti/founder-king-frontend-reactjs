@@ -162,6 +162,8 @@ const HomePage = () => {
   const testimonialData = homeSectionData?.data?.pageSections?.find(
     (section) => section.type === "testimonial");
 
+    console.log("founders:", homeSectionData?.data?.testimonials);
+
   return (
     <div>
       <MainTemplate>
