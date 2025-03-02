@@ -2,6 +2,9 @@ import React from 'react';
 import MainTemplate from '../../templates/MainTemplate/MainTemplate';
 import Section from '../../templates/Section/Section';
 import LandingPageSection from '../../organisms/LandingPageSection/LandingPageSection';
+import useSWR from 'swr';
+import envConfig from '../../../../envconfig';
+import { fetcher } from '../../../utils/SWRFetcher/SWRFetcher';
 
 const ThemePage = () => {
 
@@ -58,21 +61,31 @@ const ThemePage = () => {
         },
     ];
 
+    const {
+        data: landingPagesData,
+        error: errorLandingPagesData,
+        isLoading: loadingLandingPagesData,
+    } = useSWR(`${envConfig.apiUrl}landing/pages`, fetcher);
+
+    const landingPageData = {
+        title: landingPagesData?.data?.title,
+        content: landingPagesData?.data?.content,
+    };
 
     return (
         <div>
             <MainTemplate>
                 {/* Landing Page Section */}
-                <div className="mt-[80px]">
-                    <Section
-                        heading={"20+ Done Landing Pages For You"}
+                <div className="mt-[90px]">
+                    {/* <Section
+                        heading={landingPagesData?.data?.title}
                         className={"bg-white"}
                         subHeading={
-                            "Our “Done For You Templates” will allow you to start creating your pages in just minutes. We have used our best sales, marketing & conversion hacks on these pages to make them convert more. Just drag & drop your own content, add your branding and you are done."
+                            landingPagesData?.data?.content
                         }
-                    >
-                        <LandingPageSection data={landingPageImage} />
-                    </Section>
+                    > */}
+                        <LandingPageSection data={landingPagesData?.data?.landingpages} landingPageData={landingPageData} />
+                    {/* </Section> */}
                 </div>
             </MainTemplate>
         </div>

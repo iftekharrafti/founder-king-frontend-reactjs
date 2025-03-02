@@ -90,7 +90,7 @@ const PricingPage = () => {
                 {/* Pricing Section */}
                 <div  className="mt-[90px]">
                 <Section
-                    heading={packagesData?.data?.title}
+                    heading={""}
                     className={"bg-gray-100"}
                 >
                     <PricingSectionTwo data={packagesData?.data?.packages} pricingData={pricingData} />
