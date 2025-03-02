@@ -61,11 +61,11 @@ const ServicePage = () => {
     return (
         <div>
             <MainTemplate>
-                <div className="mt-[80px]">
+                <div className="mt-[90px]">
                     <Section
-                        heading={"Our Services"}
+                        heading={serviceData?.data?.title}
                         subHeading={
-                            "Discover our comprehensive range of solutions designed to help your business thrive in the digital age"
+                            serviceData?.data?.content
                         }
                         className={"bg-gray-100"}
                     >

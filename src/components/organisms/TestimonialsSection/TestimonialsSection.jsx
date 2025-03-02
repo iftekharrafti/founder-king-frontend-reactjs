@@ -50,7 +50,7 @@ const TestimonialsSection = () => {
         <div className="relative">
           <SwiperSlider lg={3} md={2} sm={1}>
             {testimonials.map((testimonial, index) => (
-              <SwiperSlide key={index}>
+              <SwiperSlide key={testimonial?.id}>
                 <Card>
                   <div className="space-y-4">
                     <p className="text-gray-600 italic">{testimonial.text}</p>

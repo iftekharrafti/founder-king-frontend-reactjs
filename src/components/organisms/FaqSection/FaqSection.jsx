@@ -1,7 +1,7 @@
 import FaqItem from '@/components/molecules/FaqItem/FaqItem';
 import React from 'react';
 
-const FaqSection = () => {
+const FaqSection = ({ data }) => {
     const faqs = [
         {
             question: "Is it easy to build a website?",
@@ -23,7 +23,7 @@ const FaqSection = () => {
 
     return (
         <div className="space-y-4">
-            {faqs.map((faq, index) => (
+            {data?.map((faq, index) => (
                 <FaqItem
                     key={index}
                     question={faq.question}

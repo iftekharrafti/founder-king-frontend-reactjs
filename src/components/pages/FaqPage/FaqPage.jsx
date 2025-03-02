@@ -2,17 +2,25 @@ import React from 'react';
 import Section from '../../templates/Section/Section';
 import FaqSection from '../../organisms/FaqSection/FaqSection';
 import MainTemplate from '../../templates/MainTemplate/MainTemplate';
+import { fetcher } from '../../../utils/SWRFetcher/SWRFetcher';
+import envConfig from '../../../../envconfig';
+import useSWR from 'swr';
 
 const FaqPage = () => {
+    const {
+        data: faqData,
+        error: errorFaqData,
+        isLoading: loadingFaqData,
+      } = useSWR(`${envConfig.apiUrl}faq`, fetcher);
     return (
         <div>
             <MainTemplate>
-                <div className="mt-[80px]">
+                <div className="mt-[90px]">
                     <Section
                         heading={"Frequently Asked Questions"}
                         className={"bg-gray-100"}
                     >
-                        <FaqSection />
+                        <FaqSection data={faqData?.data?.faqs} />
                     </Section>
                 </div>
             </MainTemplate>
