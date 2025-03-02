@@ -1,36 +1,13 @@
 import React from "react";
 
-const solutions = [
-  {
-    id: 1,
-    title: "Analytics Data Warehouse Solution",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-    image: "https://placehold.co/300x200",
-  },
-  {
-    id: 2,
-    title: "Application Data Processing Solution",
-    description:
-      "Duis at tellus at libero consequat sagittis et sit urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "https://placehold.co/300x200",
-  },
-  {
-    id: 3,
-    title: "Leads Performance Vectorization",
-    description:
-      "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae. Maecenas eutellus sapien eu arcu convallis, vitae vestibulum ipsum maximus.",
-    image: "https://placehold.co/300x200",
-  },
-];
 
-function LandingPageSection({ data }) {
+function LandingPageSection({ data, landingPageData }) {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl md:text-6xl">
-            Build Your Customizable Landing Page
+            {landingPageData?.title}
           </h1>
         </div>
 
@@ -52,7 +29,7 @@ function LandingPageSection({ data }) {
                   <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                     {solution.title}
                   </h2>
-                  <p className="text-gray-600 mb-4">{solution.description}</p>
+                  <p className="text-gray-600 mb-4">{solution.details}</p>
                   <a
                     href="#"
                     className="inline-flex items-center text-indigo-600 hover:text-indigo-500"

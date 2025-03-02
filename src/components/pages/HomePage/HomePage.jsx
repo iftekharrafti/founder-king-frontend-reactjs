@@ -151,6 +151,17 @@ const HomePage = () => {
 
   console.log("object", generalSettings);
 
+  const pricingData = homeSectionData?.data?.pageSections?.find(
+    (section) => section.type === "pricing")
+  const serviceData = homeSectionData?.data?.pageSections?.find(
+    (section) => section.type === "service");
+  const landingPageData = homeSectionData?.data?.pageSections?.find(
+    (section) => section.type === "landing_page");
+    const clientData = homeSectionData?.data?.pageSections?.find(
+      (section) => section.type === "client");
+  const testimonialData = homeSectionData?.data?.pageSections?.find(
+    (section) => section.type === "testimonial");
+
   return (
     <div>
       <MainTemplate>
@@ -169,25 +180,25 @@ const HomePage = () => {
             {/* <HeroSectionTwo /> */}
             {/* Pricing Section */}
 
-            <PricingSectionTwo data={pricingData} />
+            <PricingSectionTwo data={homeSectionData?.data?.packages} pricingData={pricingData} />
 
             {/* Service Section */}
-            <ServicesSection data={services} />
+            <ServicesSection data={homeSectionData?.data?.services} serviceData={serviceData} />
 
             {/* Landing Page Section */}
 
-            <LandingPageSection data={solutions} />
+            <LandingPageSection data={homeSectionData?.data?.landingpages} landingPageData={landingPageData} />
 
             {/* Service Section */}
             <Section
-              heading={"Our Happy Clients"}
+              heading={clientData?.title}
               className={"bg-global-primary pb-12"}
             >
-              <HappyCustomer />
+              <HappyCustomer clients={homeSectionData?.data?.clients} />
             </Section>
 
             {/* Testimonial Section */}
-            <FounderTestimonial />
+            <FounderTestimonial founders={homeSectionData?.data?.testimonials} testimonialData={testimonialData} />
             <Newsletter />
 
             {/* Stats Section */}
