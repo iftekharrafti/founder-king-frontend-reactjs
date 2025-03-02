@@ -149,7 +149,6 @@ const HomePage = () => {
     isLoading: loadingHomeSectionData,
   } = useSWR(`${envConfig.apiUrl}home`, fetcher);
 
-  console.log("object", generalSettings);
 
   const pricingData = homeSectionData?.data?.pageSections?.find(
     (section) => section.type === "pricing")
@@ -162,7 +161,6 @@ const HomePage = () => {
   const testimonialData = homeSectionData?.data?.pageSections?.find(
     (section) => section.type === "testimonial");
 
-    console.log("founders:", homeSectionData?.data?.testimonials);
 
   return (
     <div>

@@ -2,6 +2,9 @@ import React from 'react';
 import Section from '../../templates/Section/Section';
 import ServicesSection from '../../organisms/ServiceSection/ServicesSection';
 import MainTemplate from '../../templates/MainTemplate/MainTemplate';
+import envConfig from '../../../../envconfig';
+import { fetcher } from '../../../utils/SWRFetcher/SWRFetcher';
+import useSWR from 'swr';
 
 const ServicePage = () => {
     const services = [
@@ -48,6 +51,13 @@ const ServicePage = () => {
                 "Protecting your digital assets with comprehensive security solutions and best practices.",
         },
     ];
+
+    const {
+        data: serviceData,
+        error: errorServiceData,
+        isLoading: loadingServiceData,
+    } = useSWR(`${envConfig.apiUrl}services`, fetcher);
+
     return (
         <div>
             <MainTemplate>
@@ -59,7 +69,7 @@ const ServicePage = () => {
                         }
                         className={"bg-gray-100"}
                     >
-                        <ServicesSection data={services} />
+                        <ServicesSection data={serviceData?.data?.services} />
                     </Section>
                 </div>
             </MainTemplate>
