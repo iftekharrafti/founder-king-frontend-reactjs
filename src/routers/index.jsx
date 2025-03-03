@@ -19,6 +19,7 @@ import CheckoutPage from "../components/organisms/CheckoutPage/CheckoutPage";
 import ThemeThree from "../components/Theme/ThemeThree/ThemeThree";
 import ThemeFour from "../components/Theme/ThemeFour/ThemeFour";
 import ThemeOneProductDetails from "../components/organisms/ProductDetails/ThemeOneProductDetails/ThemeOneProductDetails";
+import ThemeTwoProductDetails from "../components/organisms/ProductDetails/ThemeTwoProductDetails/ThemeTwoProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -100,6 +101,10 @@ const router = createBrowserRouter([
       {
         path: "/theme/:id/product/1",
         element: <ThemeOneProductDetails />,
+      },
+      {
+        path: "/theme/:id/product/2",
+        element: <ThemeTwoProductDetails />,
       },
     ],
   },

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { FiCreditCard, FiMinus, FiPlus, FiShoppingCart } from 'react-icons/fi';
-import ThemeOneImageGallery from './ThemeOneImageGallery';
-import ThemeOneProductInfo from './ThemeOneProductInfo';
+import ThemeTwoImageGallery from './ThemeTwoImageGallery';
 import PrimaryButton from '../../../atoms/Buttons/PrimaryButton';
 import SecondaryButton from '../../../atoms/Buttons/SecondaryButton';
 import Typography from '../../../atoms/Typography/Typography';
 import ThemeOneMainTemplate from '../../../templates/ThemeOneMainTemplate/ThemeOneMainTemplate';
+import ThemeTwoProductInfo from './ThemeTwoProductInfo';
 
-const ThemeOneProductDetails = () => {
+const ThemeTwoProductDetails = () => {
     const [quantity, setQuantity] = useState(1);
     const [size, setSize] = useState('M'); // Default size
 
@@ -22,15 +22,11 @@ const ThemeOneProductDetails = () => {
     };
 
     const handleAddToCart = () => {
-        alert(`Added ${quantity} item(s) to cart!`);
+        alert(`Added ${quantity} item(s) of size ${size} to cart!`);
     };
 
     const handleOrderNow = () => {
-        alert(`Ordering ${quantity} item(s) now!`);
-    };
-
-    const handleSizeChange = (newSize) => {
-        setSize(newSize);
+        alert(`Ordering ${quantity} item(s) of size ${size} now!`);
     };
 
     const product = {
@@ -60,6 +56,9 @@ const ThemeOneProductDetails = () => {
         ]
     };
 
+    const handleSizeChange = (newSize) => {
+        setSize(newSize);
+    };
 
     return (
         <div>
@@ -67,12 +66,15 @@ const ThemeOneProductDetails = () => {
                 <div className="max-w-7xl mx-auto bg-gradient-to-br from-white to-neutral py-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-4 md:p-8">
                         <div className="w-full">
-                            <ThemeOneImageGallery images={product.images} />
+                            <ThemeTwoImageGallery images={product.images} />
                         </div>
 
                         <div className="space-y-6">
-                            <ThemeOneProductInfo product={product} />
+                            <ThemeTwoProductInfo product={product} />
 
+                            <div className="h-px bg-gray-200 w-full my-6"></div>
+
+                            {/* Size Selection */}
                             <div className="flex items-center gap-4">
                                 <Typography variant="h6" className="text-neutral-dark font-medium">Size:</Typography>
                                 <div className="flex gap-4">
@@ -90,26 +92,28 @@ const ThemeOneProductDetails = () => {
 
                             <div className="h-px bg-gray-200 w-full my-6"></div>
 
+                            {/* Quantity Selector */}
                             <div className="flex items-center gap-4">
-                                <Typography variant="h6" className="text-neutral-dark">Quantity:</Typography>
-                                <div className="flex items-center gap-2">
+                                <Typography variant="h6" className="text-neutral-dark font-medium">Quantity:</Typography>
+
+                                <div className="flex items-center border border-gray-300 rounded-md overflow-hidden">
                                     <button
-                                        className="bg-gray-200 h-[30px] w-[30px] rounded-full flex items-center justify-center"
+                                        className="bg-gray-100 hover:bg-gray-200 h-[36px] w-[36px] flex items-center justify-center transition disabled:opacity-50"
                                         onClick={handleDecrease}
                                         disabled={quantity <= 1}
                                     >
-                                        <FiMinus />
+                                        <FiMinus className="text-gray-600" />
                                     </button>
 
-                                    <Typography variant="span" className="w-8 text-center font-semibold">
+                                    <Typography variant="span" className="w-10 text-center font-semibold text-lg bg-white">
                                         {quantity}
                                     </Typography>
 
                                     <button
-                                        className="bg-gray-200 h-[30px] w-[30px] rounded-full flex items-center justify-center"
+                                        className="bg-gray-100 hover:bg-gray-200 h-[36px] w-[36px] flex items-center justify-center transition"
                                         onClick={handleIncrease}
                                     >
-                                        <FiPlus />
+                                        <FiPlus className="text-gray-600" />
                                     </button>
                                 </div>
                             </div>
@@ -141,4 +145,4 @@ const ThemeOneProductDetails = () => {
     );
 };
 
-export default ThemeOneProductDetails;
+export default ThemeTwoProductDetails;
