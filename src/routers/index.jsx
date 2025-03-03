@@ -18,6 +18,7 @@ import Wishlist from "../components/organisms/Wishlist/Wishlist";
 import CheckoutPage from "../components/organisms/CheckoutPage/CheckoutPage";
 import ThemeThree from "../components/Theme/ThemeThree/ThemeThree";
 import ThemeFour from "../components/Theme/ThemeFour/ThemeFour";
+import ThemeOneProductDetails from "../components/organisms/ProductDetails/ThemeOneProductDetails/ThemeOneProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -95,6 +96,10 @@ const router = createBrowserRouter([
       {
         path: "/theme/1/checkout",
         element: <CheckoutPage />,
+      },
+      {
+        path: "/theme/:id/product/1",
+        element: <ThemeOneProductDetails />,
       },
     ],
   },
