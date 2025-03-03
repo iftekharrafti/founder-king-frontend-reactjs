@@ -5,6 +5,7 @@ import MainTemplate from '../../templates/MainTemplate/MainTemplate';
 import envConfig from '../../../../envconfig';
 import { fetcher } from '../../../utils/SWRFetcher/SWRFetcher';
 import useSWR from 'swr';
+import Spinner from '../../UI/Spinner/Spinner';
 
 const ServicePage = () => {
     const services = [
@@ -69,7 +70,14 @@ const ServicePage = () => {
                         }
                         className={"bg-gray-100"}
                     >
-                        <ServicesSection data={serviceData?.data?.services} />
+                        {
+                            loadingServiceData && (
+                                <div className="flex justify-center items-center h-96">
+                                    <Spinner />
+                                </div>
+                            )
+                        }
+                        <ServicesSection data={serviceData?.data?.services} loadingServiceData={loadingServiceData} />
                     </Section>
                 </div>
             </MainTemplate>

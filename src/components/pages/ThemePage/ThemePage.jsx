@@ -77,15 +77,8 @@ const ThemePage = () => {
             <MainTemplate>
                 {/* Landing Page Section */}
                 <div className="mt-[90px]">
-                    {/* <Section
-                        heading={landingPagesData?.data?.title}
-                        className={"bg-white"}
-                        subHeading={
-                            landingPagesData?.data?.content
-                        }
-                    > */}
-                        <LandingPageSection data={landingPagesData?.data?.landingpages} landingPageData={landingPageData} />
-                    {/* </Section> */}
+                    <LandingPageSection data={landingPagesData?.data?.landingpages} landingPageData={landingPageData} loadingLandingPagesData={loadingLandingPagesData} />
+
                 </div>
             </MainTemplate>
         </div>

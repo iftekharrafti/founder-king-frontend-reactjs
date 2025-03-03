@@ -1,11 +1,20 @@
 import { useState } from "react";
+import Spinner from "../../UI/Spinner/Spinner";
 
-function PricingSectionTwo({ data, pricingData }) {
+function PricingSectionTwo({ data, pricingData, loadingPackagesData }) {
   console.log("pricing:::", data);
   const [isYearly, setIsYearly] = useState(false);
 
   const monthlyPackages = data?.filter((item) => item.type === "monthly");
   const yearlyPackages = data?.filter((item) => item.type === "yearly");
+
+  if (loadingPackagesData) {
+    return (
+      <div className="flex justify-center items-center h-96">
+        <Spinner />
+      </div>
+    )
+  }
 
   return (
     <div className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8">

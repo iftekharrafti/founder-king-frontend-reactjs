@@ -1,7 +1,8 @@
 import React from "react";
+import Spinner from "../../UI/Spinner/Spinner";
 
 
-function LandingPageSection({ data, landingPageData }) {
+function LandingPageSection({ data, landingPageData, loadingLandingPagesData }) {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -12,6 +13,13 @@ function LandingPageSection({ data, landingPageData }) {
         </div>
 
         <div className="space-y-8 md:space-y-12">
+          {
+            loadingLandingPagesData && (
+              <div className="flex justify-center items-center h-96">
+                <Spinner />
+              </div>
+            )
+          }
           {data?.map((solution) => (
             <div
               key={solution.id}

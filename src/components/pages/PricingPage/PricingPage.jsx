@@ -95,7 +95,7 @@ const PricingPage = () => {
                     heading={""}
                     className={"bg-gray-100"}
                 >
-                    <PricingSectionTwo data={packagesData?.data?.packages} pricingData={pricingData} />
+                    <PricingSectionTwo data={packagesData?.data?.packages} pricingData={pricingData} loadingPackagesData={loadingPackagesData} />
                 </Section>
                 </div>
             </MainTemplate>
