@@ -78,6 +78,12 @@ const AddtoCart = () => {
 
                         <div className="md:col-span-1">
                             <div className="bg-white p-6 rounded-xl shadow-sm mt-6 md:mt-0 sticky top-20">
+                                <div className="flex justify-between items-center text-xl font-bold mb-3">
+                                    <span>Total Items:</span>
+                                    <span className="text-indigo-600">
+                                        {sampleCartItems.length}
+                                    </span>
+                                </div>
                                 <div className="flex justify-between items-center text-xl font-bold">
                                     <span>Total:</span>
                                     <span className="text-indigo-600">
