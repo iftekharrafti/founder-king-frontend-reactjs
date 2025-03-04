@@ -12,14 +12,14 @@ const ThemeFourProductCategoryCard = ({ category }) => {
                 <div className="relative">
                     <img
                         src={category.imageUrl}
-                        alt="Ladies Clothing - Pink Pajama Set"
+                        alt={category?.name}
                         className="w-full h-64 object-cover"
                     />
 
                     {/* Category Label */}
                     <div className="absolute bottom-0 left-0 right-0 bg-white py-2 text-center">
                         <Link to="/category">
-                        <h2 className="text-gray-800 font-medium text-lg">{category?.name}</h2></Link>
+                            <h2 className="text-gray-800 font-medium text-lg">{category?.name}</h2></Link>
                     </div>
                 </div>
 

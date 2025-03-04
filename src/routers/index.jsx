@@ -20,6 +20,7 @@ import ThemeThree from "../components/Theme/ThemeThree/ThemeThree";
 import ThemeFour from "../components/Theme/ThemeFour/ThemeFour";
 import ThemeOneProductDetails from "../components/organisms/ProductDetails/ThemeOneProductDetails/ThemeOneProductDetails";
 import ThemeTwoProductDetails from "../components/organisms/ProductDetails/ThemeTwoProductDetails/ThemeTwoProductDetails";
+import ThemeFive from "../components/Theme/ThemeFive/ThemeFive";
 
 const router = createBrowserRouter([
   {
@@ -85,6 +86,10 @@ const router = createBrowserRouter([
       {
         path: "/theme/4",
         element: <ThemeFour />,
+      },
+      {
+        path: "/theme/5",
+        element: <ThemeFive />,
       },
       {
         path: "/add-to-cart",
