@@ -21,6 +21,7 @@ import ThemeFour from "../components/Theme/ThemeFour/ThemeFour";
 import ThemeOneProductDetails from "../components/organisms/ProductDetails/ThemeOneProductDetails/ThemeOneProductDetails";
 import ThemeTwoProductDetails from "../components/organisms/ProductDetails/ThemeTwoProductDetails/ThemeTwoProductDetails";
 import ThemeFive from "../components/Theme/ThemeFive/ThemeFive";
+import ThemeSix from "../components/Theme/ThemeSix/ThemeSix";
 
 const router = createBrowserRouter([
   {
@@ -90,6 +91,10 @@ const router = createBrowserRouter([
       {
         path: "/theme/5",
         element: <ThemeFive />,
+      },
+      {
+        path: "/theme/6",
+        element: <ThemeSix />,
       },
       {
         path: "/add-to-cart",

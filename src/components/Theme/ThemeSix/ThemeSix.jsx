@@ -4,12 +4,12 @@ import TestimonialsSection from '../../organisms/TestimonialsSection/Testimonial
 import { useColors } from '../../../context/colorContext';
 import ThemeOneHeroSection from '../../organisms/HeroSection/ThemeOneHeroSection';
 import CategorySectionTwo from '../../UI/CategorySection/CategorySectionTwo';
-import ThemeFiveMainTemplate from '../../templates/ThemeFiveMainTemplate/ThemeFiveMainTemplate';
-import ThemeFiveProductCategoryCard from '../../organisms/CategoryCard/ThemeFiveProductCategoryCard';
 import ThemeFiveProductGrid from '../../molecules/ThemeFiveProductGrid/ThemeFiveProductGrid';
 import CategoryTabs from '../../molecules/CategoryTabs/CategoryTabs';
+import ThemeSixMainTemplate from '../../templates/ThemeSixMainTemplate/ThemeSixMainTemplate';
+import ThemeSixProductCategoryCard from '../../organisms/CategoryCard/ThemeSixProductCategoryCard';
 
-const ThemeFive = () => {
+const ThemeSix = () => {
     const [activeCategory, setActiveCategory] = useState('mens');
 
     const handleCategoryChange = (categoryId) => {
@@ -36,30 +36,25 @@ const ThemeFive = () => {
 
     const categories = [
         {
-            id: 'mens',
-            name: "MEN'S FASHION",
-            image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+            title: 'Earrings',
+            image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&q=80&w=2960&ixlib=rb-4.0.3'
         },
         {
-            id: 'womens',
-            name: "WOMEN'S FASHION",
-            image: "https://images.unsplash.com/photo-1618932260643-eee4a2f652a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+            title: 'Bracelets',
+            image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&q=80&w=2960&ixlib=rb-4.0.3'
         },
         {
-            id: 'boys',
-            name: "BOYS FASHION",
-            image: "https://images.unsplash.com/photo-1471286174890-9c112ffca5b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+            title: 'Rings',
+            image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=2960&ixlib=rb-4.0.3'
         },
         {
-            id: 'girls',
-            name: "GIRLS FASHION",
-            image: "https://images.unsplash.com/photo-1621452773781-0f992fd1f5cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+            title: 'Necklaces',
+            image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=2960&ixlib=rb-4.0.3'
         },
         {
-            id: 'baby',
-            name: "BABY",
-            image: "https://images.unsplash.com/photo-1522771930-78848d9293e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-        },
+            title: 'Engagement',
+            image: 'https://images.unsplash.com/photo-1590548784585-643d2b9f2925?auto=format&fit=crop&q=80&w=2960&ixlib=rb-4.0.3'
+        }
     ];
 
     const products = {
@@ -217,9 +212,9 @@ const ThemeFive = () => {
     }, []);
     return (
         <div>
-            <ThemeFiveMainTemplate>
+            <ThemeSixMainTemplate>
                 <ThemeOneHeroSection slides={heroSlides} />
-                <CategorySectionTwo heading={"Product Categories"} categories={categories} CategoryCardComponent={ThemeFiveProductCategoryCard} />
+                <CategorySectionTwo heading={"Popular Categories"} categories={categories} CategoryCardComponent={ThemeSixProductCategoryCard} />
                 <section className="py-12 bg-gradient-to-br from-white to-neutral/30">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="text-center mb-8">
@@ -249,9 +244,9 @@ const ThemeFive = () => {
                 >
                     <TestimonialsSection />
                 </Section>
-            </ThemeFiveMainTemplate>
+            </ThemeSixMainTemplate>
         </div>
     );
 };
 
-export default ThemeFive;
+export default ThemeSix;
