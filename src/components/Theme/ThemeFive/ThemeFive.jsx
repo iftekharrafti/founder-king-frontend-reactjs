@@ -3,10 +3,7 @@ import Section from '../../templates/Section/Section';
 import TestimonialsSection from '../../organisms/TestimonialsSection/TestimonialsSection';
 import { useColors } from '../../../context/colorContext';
 import ThemeOneHeroSection from '../../organisms/HeroSection/ThemeOneHeroSection';
-import ThemeFourMainTemplate from '../../templates/ThemeFourMainTemplate/ThemeFourMainTemplate';
-import ThemeFourProductCategoryCard from '../../organisms/CategoryCard/ThemeFourProductCategoryCard';
 import CategorySectionTwo from '../../UI/CategorySection/CategorySectionTwo';
-import ProductColumn from '../../UI/ProductColumn/ProductColumn';
 import ThemeFiveMainTemplate from '../../templates/ThemeFiveMainTemplate/ThemeFourMainTemplate';
 import ThemeFiveProductCategoryCard from '../../organisms/CategoryCard/ThemeFiveProductCategoryCard';
 import ThemeFiveProductGrid from '../../molecules/ThemeFiveProductGrid/ThemeFiveProductGrid';
@@ -38,11 +35,31 @@ const ThemeFive = () => {
     ];
 
     const categories = [
-        { id: 'mens', name: "MEN'S FASHION", image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
-        { id: 'womens', name: "WOMEN'S FASHION", image: "https://images.unsplash.com/photo-1618932260643-eee4a2f652a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
-        { id: 'boys', name: "BOYS FASHION", image: "https://images.unsplash.com/photo-1471286174890-9c112ffca5b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
-        { id: 'girls', name: "GIRLS FASHION", image: "https://images.unsplash.com/photo-1621452773781-0f992fd1f5cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
-        { id: 'baby', name: "BABY", image: "https://images.unsplash.com/photo-1522771930-78848d9293e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+        {
+            id: 'mens',
+            name: "MEN'S FASHION",
+            image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+            id: 'womens',
+            name: "WOMEN'S FASHION",
+            image: "https://images.unsplash.com/photo-1618932260643-eee4a2f652a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+            id: 'boys',
+            name: "BOYS FASHION",
+            image: "https://images.unsplash.com/photo-1471286174890-9c112ffca5b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+            id: 'girls',
+            name: "GIRLS FASHION",
+            image: "https://images.unsplash.com/photo-1621452773781-0f992fd1f5cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+            id: 'baby',
+            name: "BABY",
+            image: "https://images.unsplash.com/photo-1522771930-78848d9293e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+        },
     ];
 
     const products = {
