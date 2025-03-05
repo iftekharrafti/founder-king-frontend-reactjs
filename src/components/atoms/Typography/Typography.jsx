@@ -9,11 +9,11 @@ const Typography = ({
   const getComponent = () => {
     switch (variant) {
       case 'h1':
-        return <h1 className={`text-4xl font-bold ${className}`} {...props}>{children}</h1>;
+        return <h1 className={`md:text-4xl text-xl font-bold ${className}`} {...props}>{children}</h1>;
       case 'h2':
-        return <h2 className={`text-3xl font-bold ${className}`} {...props}>{children}</h2>;
+        return <h2 className={`md:text-3xl text-xl font-bold ${className}`} {...props}>{children}</h2>;
       case 'h3':
-        return <h3 className={`text-2xl font-semibold ${className}`} {...props}>{children}</h3>;
+        return <h3 className={`md:text-2xl text-lg font-semibold ${className}`} {...props}>{children}</h3>;
       case 'h4':
         return <h4 className={`text-xl font-semibold ${className}`} {...props}>{children}</h4>;
       case 'h5':

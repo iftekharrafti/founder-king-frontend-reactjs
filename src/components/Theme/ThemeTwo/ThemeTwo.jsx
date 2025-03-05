@@ -166,12 +166,12 @@ const ThemeTwo = () => {
     <div>
       <ThemeTwoMainTemplate>
         <ThemeTwoHeroSection slides={heroSlides} />
+        <CategorySection heading={"Our Categories"} categories={categories} CategoryCardComponent={ThemeTwoProductCategoryCard} />
         <FeatureProductsSection
           products={products}
           heading="Featured Products"
           ProductCardComponent={ThemeTwoProductCard}
         />
-        <CategorySection heading={"Our Categories"} categories={categories} CategoryCardComponent={ThemeTwoProductCategoryCard} />
         <FeatureProductsSection
           products={products}
           heading="New Arrivals"
