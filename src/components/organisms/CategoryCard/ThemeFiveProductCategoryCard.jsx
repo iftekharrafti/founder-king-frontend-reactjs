@@ -1,6 +1,4 @@
 import React from 'react';
-import { BsArrowRight } from 'react-icons/bs';
-import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 

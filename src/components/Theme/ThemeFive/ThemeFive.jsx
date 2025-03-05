@@ -50,7 +50,7 @@ const ThemeFive = () => {
             {
                 id: 'm1',
                 name: "Men's White Kurta",
-                image: "https://images.unsplash.com/photo-1598808503746-f34cfb6350ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
                 originalPrice: 1500,
                 discountPrice: 1200,
                 category: "mens"
@@ -208,7 +208,7 @@ const ThemeFive = () => {
                         <div className="text-center mb-8">
                             <h2 className="text-3xl md:text-4xl font-bold text-neutral-dark mb-2 relative inline-block">
                                 POPULAR PRODUCTS
-                                <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-primary to-secondary"></span>
+                                <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-theme-primary to-theme-secondary"></span>
                             </h2>
                             <p className="text-gray-600 mt-4">Check & Get Your Desired Products!</p>
                         </div>
